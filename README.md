@@ -33,3 +33,12 @@ composer install
 9. Visit here for backend [http://localhost:4201/secure/auth/login](http://localhost:4201/secure/auth/login) to test the API
 10. Start frontend server by executing `ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --port 4201`
 11. Visit here for frontend [http://localhost:4201/login](http://localhost:4201/login) to test the application
+
+```
+composer dump-autoload
+```
+
+
+```
+composer dump-autoload --ignore-platform-reqs
+```
