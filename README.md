@@ -27,7 +27,7 @@ composer install
 3. Go to the project's root directory using terminal window/command prompt
 4. Run `composer install`
 5. Set the application key by running `php artisan key:generate --ansi`
-6. you can install application using the following url through installation window [http://localhost:8082/] (Installation Window)
+6. you can install application using the following url through installation window [http://localhost:8082/](http://localhost:8082/) Installation Window
 7. Run migrations `php artisan migrate`
 8. Start backend local server by executing `php artisan serve --port=8082`
 9. Visit here for backend [http://localhost:4201/secure/auth/login](http://localhost:4201/secure/auth/login) to test the API
