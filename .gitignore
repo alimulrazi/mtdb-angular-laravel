@@ -1,0 +1,47 @@
+# Laravel 8
+/backend/node_modules
+/backend/public/hot
+/backend/public/storage
+/backend/storage/*.key
+/backend/vendor
+/backend/.env
+/backend/.env.example
+/backend/.phpunit.result.cache
+/backend/docker-compose.override.yml
+/backend/Homestead.json
+/backend/Homestead.yaml
+/backend/npm-debug.log
+/backend/yarn-error.log
+/backend/.idea
+/backend/.vscode
+
+#Angular 12
+
+# Angular specific
+/frontend/dist/
+/frontend/out-tsc/
+/frontend/tmp/
+/frontend/coverage/
+/frontend/e2e/test-output/
+/frontend/.angular/
+/frontend.angular/
+
+# Node modules and dependency files
+/frontend/node_modules/
+/frontend/package-lock.json
+/frontend/yarn.lock
+
+# Environment files
+/frontend/.env
+
+# Angular CLI and build artifacts
+/frontend/.angular-cli.json
+/frontend/.ng/
+
+# TypeScript cache
+/frontend/*.tsbuildinfo
+
+# Logs
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
