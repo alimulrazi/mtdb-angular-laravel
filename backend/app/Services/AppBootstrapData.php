@@ -1,7 +1,7 @@
 <?php namespace App\Services;
 
 use App\Services\Lists\LoadListContent;
-use Common\Core\Bootstrap\BaseBootstrapData;
+use Api\Core\Bootstrap\BaseBootstrapData;
 
 class AppBootstrapData extends BaseBootstrapData
 {

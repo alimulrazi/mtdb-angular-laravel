@@ -7,8 +7,8 @@ use App\Review;
 use App\Services\Reviews\UpdateReviewableAverageScore;
 use App\Title;
 use Auth;
-use Common\Core\BaseController;
-use Common\Database\Datasource\MysqlDataSource;
+use Api\Core\BaseController;
+use Api\Database\Datasource\MysqlDataSource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

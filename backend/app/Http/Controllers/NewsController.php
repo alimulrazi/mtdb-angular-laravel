@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\NewsArticle;
 use App\Services\News\ImportNewsFromRemoteProvider;
-use Common\Core\BaseController;
-use Common\Database\Datasource\MysqlDataSource;
+use Api\Core\BaseController;
+use Api\Database\Datasource\MysqlDataSource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

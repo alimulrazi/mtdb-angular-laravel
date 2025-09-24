@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Video;
 use App\VideoRating;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\Request;
 use App\Services\Videos\RateVideo;
 

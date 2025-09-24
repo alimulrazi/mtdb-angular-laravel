@@ -4,7 +4,7 @@ use App\Image;
 use App\Person;
 use App\Title;
 use App\Video;
-use Common\Tags\Tag;
+use Api\Tags\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Collection;

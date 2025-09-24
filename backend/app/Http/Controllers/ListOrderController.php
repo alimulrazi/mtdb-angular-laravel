@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Listable;
 use App\ListModel;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use DB;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

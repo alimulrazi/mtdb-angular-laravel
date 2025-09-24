@@ -4,7 +4,7 @@ namespace App\Services\People\Retrieve;
 
 use App\Person;
 use App\Title;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

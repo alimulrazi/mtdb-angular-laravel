@@ -12,8 +12,8 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\TitleCreditController;
 use App\Http\Controllers\UserProfileController;
-use Common\Auth\Controllers\GetAccessTokenController;
-use Common\Auth\Controllers\RegisterController;
+use Api\Auth\Controllers\GetAccessTokenController;
+use Api\Auth\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------

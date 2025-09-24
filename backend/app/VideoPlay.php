@@ -3,7 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
-use Common\Plays\FindsCurrentUserPlays;
+use Api\Plays\FindsCurrentUserPlays;
 use Eloquent;
 use Illuminate\Database\Eloquent\Model;
 

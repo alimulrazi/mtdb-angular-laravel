@@ -4,7 +4,7 @@ namespace App\Services\Lists;
 
 use App\Listable;
 use App\ListModel;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use Illuminate\Support\Collection;
 
 class DeleteLists

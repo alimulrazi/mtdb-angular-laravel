@@ -5,7 +5,7 @@ namespace App\Services\Admin;
 use App\Person;
 use App\Title;
 use App\User;
-use Common\Admin\Analytics\Actions\GetAnalyticsHeaderDataAction;
+use Api\Admin\Analytics\Actions\GetAnalyticsHeaderDataAction;
 
 class GetAnalyticsHeaderData implements GetAnalyticsHeaderDataAction
 {

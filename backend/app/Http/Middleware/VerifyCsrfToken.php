@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Common\Core\BaseVerifyCsrfToken;
+use Api\Core\BaseVerifyCsrfToken;
 
 class VerifyCsrfToken extends BaseVerifyCsrfToken
 {

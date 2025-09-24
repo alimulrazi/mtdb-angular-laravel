@@ -6,7 +6,7 @@ use App\Episode;
 use App\Season;
 use App\Video;
 use Auth;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use Illuminate\Support\Arr;
 
 class CrupdateVideo

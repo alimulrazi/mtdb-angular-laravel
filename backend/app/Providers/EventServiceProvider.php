@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Listeners\CreateWatchlist;
 use App\Listeners\DeleteUserLists;
-use Common\Auth\Events\UserCreated;
-use Common\Auth\Events\UsersDeleted;
+use Api\Auth\Events\UserCreated;
+use Api\Auth\Events\UsersDeleted;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider

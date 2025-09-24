@@ -9,7 +9,7 @@ use App\Services\Traits\StoresMediaImages;
 use App\Title;
 use App\Video;
 use Carbon\Carbon;
-use Common\Tags\Tag;
+use Api\Tags\Tag;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

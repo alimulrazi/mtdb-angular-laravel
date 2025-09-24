@@ -11,7 +11,7 @@ use App\Services\Titles\Store\StoreSeasonData;
 use App\Services\Titles\Store\StoreTitleData;
 use App\Services\Traits\HandlesTitleId;
 use App\Title;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 

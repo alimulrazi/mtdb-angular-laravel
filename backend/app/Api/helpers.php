@@ -2,6 +2,7 @@
 
 use Cocur\Slugify\Slugify;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 if (!function_exists('slugify')) {
     /**

@@ -7,7 +7,7 @@ use App\Season;
 use App\Services\Titles\Store\StoreSeasonData;
 use App\Title;
 use Carbon\Carbon;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 

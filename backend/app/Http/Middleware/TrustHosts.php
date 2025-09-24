@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Common\Core\BaseTrustHosts;
+use Api\Core\BaseTrustHosts;
 
 class TrustHosts extends BaseTrustHosts
 {

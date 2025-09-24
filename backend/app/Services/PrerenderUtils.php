@@ -5,7 +5,7 @@ use App\NewsArticle;
 use App\Person;
 use App\Season;
 use App\Title;
-use Common\Core\Seo\BasePrerenderUtils;
+use Api\Core\Seo\BasePrerenderUtils;
 
 class PrerenderUtils extends BasePrerenderUtils
 {

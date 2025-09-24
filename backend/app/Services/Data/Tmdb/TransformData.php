@@ -9,7 +9,7 @@ use App\Services\Traits\HandlesTitleId;
 use App\Title;
 use App\Video;
 use Carbon\Carbon;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

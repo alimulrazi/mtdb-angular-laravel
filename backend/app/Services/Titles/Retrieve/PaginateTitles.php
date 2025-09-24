@@ -4,8 +4,8 @@ namespace App\Services\Titles\Retrieve;
 
 use App\Title;
 use Carbon\Carbon;
-use Common\Database\Datasource\MysqlDataSource;
-use Common\Settings\Settings;
+use Api\Database\Datasource\MysqlDataSource;
+use Api\Settings\Settings;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;

@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\ListModel;
-use Common\Auth\Events\UserCreated;
+use Api\Auth\Events\UserCreated;
 
 class CreateWatchlist
 {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Video;
 use Illuminate\Http\Request;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 
 class CaptionOrderController extends BaseController

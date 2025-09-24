@@ -3,7 +3,7 @@
 namespace App\Actions\Plays;
 
 use App\Video;
-use Common\Plays\LogModelPlay;
+use Api\Plays\LogModelPlay;
 use Illuminate\Database\Eloquent\Model;
 
 class LogVideoPlay extends LogModelPlay

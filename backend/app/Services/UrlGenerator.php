@@ -8,8 +8,8 @@ use App\Person;
 use App\Season;
 use App\Title;
 use App\User;
-use Common\Core\Prerender\BaseUrlGenerator;
-use Common\Tags\Tag;
+use Api\Core\Prerender\BaseUrlGenerator;
+use Api\Tags\Tag;
 
 class UrlGenerator extends BaseUrlGenerator
 {

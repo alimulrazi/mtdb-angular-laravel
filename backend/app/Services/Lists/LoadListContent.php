@@ -8,7 +8,7 @@ use App\ListModel;
 use App\Person;
 use App\Title;
 use Arr;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Str;

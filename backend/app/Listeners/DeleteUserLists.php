@@ -4,8 +4,8 @@ namespace App\Listeners;
 
 use App\ListModel;
 use App\Services\Lists\DeleteLists;
-use Common\Auth\Events\UserCreated;
-use Common\Auth\Events\UsersDeleted;
+use Api\Auth\Events\UserCreated;
+use Api\Auth\Events\UsersDeleted;
 
 class DeleteUserLists
 {

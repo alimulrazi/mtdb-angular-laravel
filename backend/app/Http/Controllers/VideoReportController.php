@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Video;
 use App\VideoReport;
 use Auth;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

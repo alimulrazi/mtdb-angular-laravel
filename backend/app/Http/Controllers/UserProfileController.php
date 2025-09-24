@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\ListModel;
 use App\User;
 use Auth;
-use Common\Comments\Comment;
-use Common\Core\BaseController;
-use Common\Database\Datasource\MysqlDataSource;
+use Api\Comments\Comment;
+use Api\Core\BaseController;
+use Api\Database\Datasource\MysqlDataSource;
 use Str;
 
 class UserProfileController extends BaseController

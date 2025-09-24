@@ -7,9 +7,9 @@ use App\Services\AppBootstrapData;
 use App\Services\Data\Contracts\NewsProviderInterface;
 use App\Services\Data\News\ImdbNewsProvider;
 use App\Services\UrlGenerator;
-use Common\Admin\Analytics\Actions\GetAnalyticsHeaderDataAction;
-use Common\Core\Bootstrap\BootstrapData;
-use Common\Core\Contracts\AppUrlGenerator;
+use Api\Admin\Analytics\Actions\GetAnalyticsHeaderDataAction;
+use Api\Core\Bootstrap\BootstrapData;
+use Api\Core\Contracts\AppUrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Person;
 use App\Services\People\Retrieve\GetPersonCredits;
 use App\Services\Titles\Retrieve\FindOrCreateMediaItem;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Arr;
 

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Common\Auth\Permissions\Permission;
-use Common\Billing\BillingPlan;
+use Api\Auth\Permissions\Permission;
+use Api\Billing\BillingPlan;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Arr;
 

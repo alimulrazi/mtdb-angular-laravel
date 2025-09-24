@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Auth;
-use Common\Core\BaseFormRequest;
+use Api\Core\BaseFormRequest;
 use Illuminate\Validation\Rule;
 
 class CrupdateCaptionRequest extends BaseFormRequest

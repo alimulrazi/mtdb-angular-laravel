@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use Common\Auth\BaseUser;
+use Api\Auth\BaseUser;
 use NamespacedDummyModel;
-use Common\Core\Policies\BasePolicy;
+use Api\Core\Policies\BasePolicy;
 
 class DummyClass extends BasePolicy
 {

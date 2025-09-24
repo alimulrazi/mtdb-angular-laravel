@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\ListModel;
 use App\User;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use Illuminate\Database\Seeder;
 
 class DefaultListsSeeder extends Seeder

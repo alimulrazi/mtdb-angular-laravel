@@ -6,7 +6,7 @@ use App\Episode;
 use App\Season;
 use App\Title;
 use Carbon\Carbon;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;

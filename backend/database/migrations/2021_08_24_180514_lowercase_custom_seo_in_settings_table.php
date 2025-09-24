@@ -1,6 +1,6 @@
 <?php
 
-use Common\Settings\Setting;
+use Api\Settings\Setting;
 use Illuminate\Database\Migrations\Migration;
 
 class LowercaseCustomSeoInSettingsTable extends Migration

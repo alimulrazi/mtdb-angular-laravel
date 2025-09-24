@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Image;
 use App\Services\Images\StoreMediaImageOnDisk;
 use App\Title;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\Request;
 use Image as ImageManager;
 use Storage;

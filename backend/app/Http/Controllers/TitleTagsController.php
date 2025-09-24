@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Title;
-use Common\Core\BaseController;
-use Common\Tags\Tag;
+use Api\Core\BaseController;
+use Api\Tags\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

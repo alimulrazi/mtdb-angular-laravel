@@ -5,7 +5,7 @@ namespace App\Services\Settings\Validators;
 use Illuminate\Support\Arr;
 use App\Services\Data\Tmdb\TmdbApi;
 use GuzzleHttp\Exception\ClientException;
-use Common\Settings\Validators\SettingsValidator;
+use Api\Settings\Validators\SettingsValidator;
 
 class TmdbApiKeyValidator implements SettingsValidator
 {

@@ -7,7 +7,7 @@ use App\NewsArticle;
 use App\Person;
 use App\Season;
 use App\Title;
-use Common\Admin\Sitemap\BaseSitemapGenerator;
+use Api\Admin\Sitemap\BaseSitemapGenerator;
 
 class SitemapGenerator extends BaseSitemapGenerator
 {

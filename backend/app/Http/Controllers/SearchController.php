@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Services\Data\Local\LocalDataProvider;
 use App\Services\Data\Tmdb\TmdbApi;
-use Common\Core\BaseController;
-use Common\Settings\Settings;
+use Api\Core\BaseController;
+use Api\Settings\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Str;

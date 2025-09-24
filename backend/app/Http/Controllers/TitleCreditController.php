@@ -7,7 +7,7 @@ use App\Person;
 use App\Season;
 use DB;
 use App\Title;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 

@@ -3,7 +3,7 @@
 namespace App\Services\Titles\Retrieve;
 
 use App\Title;
-use Common\Settings\Settings;
+use Api\Settings\Settings;
 use DB;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Common\Pages\CustomPage;
+use Api\Pages\CustomPage;
 use Illuminate\Database\Eloquent\Builder;
 
 /**

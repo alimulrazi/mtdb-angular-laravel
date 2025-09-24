@@ -2,8 +2,8 @@
 
 namespace DummyNamespace;
 
-use Common\Core\BaseController;
-use Common\Database\Paginator;
+use Api\Core\BaseController;
+use Api\Database\Paginator;
 use Illuminate\Http\Request;
 use DummyFullModelClass;
 use Illuminate\Http\Response;

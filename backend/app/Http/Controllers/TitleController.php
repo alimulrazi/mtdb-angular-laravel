@@ -13,7 +13,7 @@ use App\Services\Titles\Retrieve\ShowTitle;
 use App\Services\Titles\Store\StoreTitleData;
 use App\Title;
 use App\Video;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use DB;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

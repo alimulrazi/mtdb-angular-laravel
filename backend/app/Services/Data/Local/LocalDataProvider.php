@@ -8,7 +8,7 @@ use App\Services\Data\Contracts\DataProvider;
 use App\Title;
 use Arr;
 use Carbon\Carbon;
-use Common\Tags\Tag;
+use Api\Tags\Tag;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
 use Str;

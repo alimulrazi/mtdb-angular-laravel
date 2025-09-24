@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Actions\Plays\LogVideoPlay;
 use App\Services\Videos\CrupdateVideo;
 use App\Video;
-use Common\Core\BaseController;
-use Common\Database\Datasource\MysqlDataSource;
+use Api\Core\BaseController;
+use Api\Database\Datasource\MysqlDataSource;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Request;
 

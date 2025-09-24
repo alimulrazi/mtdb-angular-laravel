@@ -10,7 +10,7 @@ use App\Title;
 use App\Person;
 use App\Episode;
 use App\ListModel;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 

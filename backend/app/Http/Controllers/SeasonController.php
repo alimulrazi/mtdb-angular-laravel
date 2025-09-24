@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Episode;
 use App\Season;
 use App\Title;
-use Common\Core\BaseController;
+use Api\Core\BaseController;
 use Illuminate\Http\Request;
 
 class SeasonController extends BaseController
