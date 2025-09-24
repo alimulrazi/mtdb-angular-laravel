@@ -164,7 +164,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Common\CommonServiceProvider::class,
+        Api\ApiServiceProvider::class,
 
         /*
          * Application Service Providers...

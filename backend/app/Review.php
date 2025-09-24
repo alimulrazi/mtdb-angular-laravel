@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Common\Search\Searchable;
+use Api\Search\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 /**

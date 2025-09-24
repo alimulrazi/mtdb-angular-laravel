@@ -151,7 +151,6 @@ return array(
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Composer\\Pcre\\' => array($vendorDir . '/composer/pcre/src'),
     'Composer\\ClassMapGenerator\\' => array($vendorDir . '/composer/class-map-generator/src'),
-    'Common\\' => array($baseDir . '/common'),
     'Cocur\\Slugify\\' => array($vendorDir . '/cocur/slugify/src'),
     'Clue\\StreamFilter\\' => array($vendorDir . '/clue/stream-filter/src'),
     'Clockwork\\' => array($vendorDir . '/itsgoingd/clockwork/Clockwork'),
@@ -163,5 +162,6 @@ return array(
     'Aws\\' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
     'App\\' => array($baseDir . '/app'),
+    'Api\\' => array($baseDir . '/app/Api'),
     '' => array($vendorDir . '/league/color-extractor/src'),
 );

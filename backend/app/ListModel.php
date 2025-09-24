@@ -7,8 +7,8 @@ use App\Services\Data\Local\LocalDataProvider;
 use App\Services\Data\Tmdb\TmdbApi;
 use Arr;
 use Carbon\Carbon;
-use Common\Search\Searchable;
-use Common\Settings\Settings;
+use Api\Search\Searchable;
+use Api\Settings\Settings;
 use Illuminate\Database\Eloquent\Model;
 
 /**

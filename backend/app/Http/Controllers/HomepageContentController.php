@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\ListModel;
 use App\Services\Lists\LoadListContent;
-use Common\Core\BaseController;
-use Common\Settings\Settings;
+use Api\Core\BaseController;
+use Api\Settings\Settings;
 
 class HomepageContentController extends BaseController
 {

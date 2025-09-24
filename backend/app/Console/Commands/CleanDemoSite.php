@@ -5,10 +5,10 @@ namespace App\Console\Commands;
 use App\ListModel;
 use App\User;
 use Artisan;
-use Common\Auth\Permissions\Permission;
-use Common\Auth\Permissions\Traits\SyncsPermissions;
-use Common\Localizations\Localization;
-use Common\Settings\Settings;
+use Api\Auth\Permissions\Permission;
+use Api\Auth\Permissions\Traits\SyncsPermissions;
+use Api\Localizations\Localization;
+use Api\Settings\Settings;
 use Hash;
 use Illuminate\Console\Command;
 

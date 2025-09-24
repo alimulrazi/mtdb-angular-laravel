@@ -2,12 +2,12 @@
 
 namespace App\Console;
 
-use Common\Generators\Action\GenerateAction;
-use Common\Generators\Controller\GenerateController;
-use Common\Generators\Model\GenerateModel;
-use Common\Generators\Policy\GeneratePolicy;
-use Common\Generators\Request\GenerateRequest;
-use Common\Settings\Settings;
+use Api\Generators\Action\GenerateAction;
+use Api\Generators\Controller\GenerateController;
+use Api\Generators\Model\GenerateModel;
+use Api\Generators\Policy\GeneratePolicy;
+use Api\Generators\Request\GenerateRequest;
+use Api\Settings\Settings;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

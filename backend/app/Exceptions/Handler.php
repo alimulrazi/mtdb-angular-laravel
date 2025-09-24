@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use Common\Core\Exceptions\BaseExceptionHandler;
+use Api\Core\Exceptions\BaseExceptionHandler;
 
 class Handler extends BaseExceptionHandler
 {

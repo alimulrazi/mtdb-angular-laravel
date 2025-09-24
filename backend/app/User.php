@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Common\Auth\BaseUser;
-use Common\Comments\Comment;
+use Api\Auth\BaseUser;
+use Api\Comments\Comment;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Collection;
