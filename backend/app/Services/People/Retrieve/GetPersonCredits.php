@@ -262,20 +262,23 @@ class GetPersonCredits
     {
         $cast = [];
         $self = [];
-        foreach ($credits['cast'] as $credit) {
-            $char = isset($credit['pivot']['character'])
-                ? strtolower($credit['pivot']['character'])
-                : null;
-            if (
-                $char &&
-                ($char === 'self' || Str::contains($char, 'himself'))
-            ) {
-                $self[] = $credit;
-            } else {
-                $cast[] = $credit;
+        
+        if (isset($credits['cast'])) {
+            foreach ($credits['cast'] as $credit) {
+                $char = isset($credit['pivot']['character'])
+                    ? strtolower($credit['pivot']['character'])
+                    : null;
+                if (
+                    $char &&
+                    ($char === 'self' || Str::contains($char, 'himself'))
+                ) {
+                    $self[] = $credit;
+                } else {
+                    $cast[] = $credit;
+                }
             }
+            $credits['cast'] = $cast;
         }
-        $credits['cast'] = $cast;
 
         // sort before adding "self" to array as that should be last always
         uksort($credits, function ($a, $b) use ($credits) {
