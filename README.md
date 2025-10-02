@@ -26,7 +26,7 @@ composer install
 2. Copy `.env.example` into `.env` and configure your database credentials
 3. Go to the project's root directory using terminal window/command prompt
 4. Run `composer install` or `composer install --ignore-platform-reqs --no-scripts`
-### Run the following command:
+### Run the following command for laravel:
 ```
 composer dump-autoload
 ```
@@ -51,6 +51,21 @@ php artisan route:clear
 
 ```
 php artisan view:clear
+```
+
+### Run the following command for angular:
+
+Use node version: 20.19.5
+```
+ng build  or ng build --varbose
+```
+
+```
+npm install or npm install --legacy-peer-deps
+```
+
+```
+npm start
 ```
 
 5. Set the application key by running `php artisan key:generate --ansi`
