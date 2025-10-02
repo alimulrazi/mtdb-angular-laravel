@@ -1,15 +1,11 @@
 import {ChangeDetectionStrategy, Component, ElementRef, Inject, OnInit, Optional, ViewChild} from '@angular/core';
 import {OverlayPanelRef} from '../overlay-panel/overlay-panel-ref';
 import {OVERLAY_PANEL_DATA} from '../overlay-panel/overlay-panel-data';
-import {ColorPickerService} from 'ngx-color-picker';
 
 @Component({
     templateUrl: './colorpicker-panel.component.html',
     styleUrls: ['./colorpicker-panel.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [
-        ColorPickerService,
-    ]
 })
 export class ColorpickerPanelComponent implements OnInit {
     @ViewChild('trigger', { static: true }) trigger: ElementRef<HTMLElement>;

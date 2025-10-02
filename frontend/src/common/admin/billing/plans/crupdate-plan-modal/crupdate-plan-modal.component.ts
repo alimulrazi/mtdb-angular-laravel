@@ -36,18 +36,18 @@ export class CrupdatePlanModalComponent implements OnInit {
     private allPlans$ = new BehaviorSubject<Plan[]>([]);
     public form = this.fb.group({
         name: [''],
-        parent_id: [],
+        parent_id: [null],
         free: [false],
         hidden: [false],
         recommended: [false],
         show_permissions: [false],
-        amount: [],
-        currency: [],
-        interval: [],
-        interval_count: [],
-        position: [],
-        available_space: [],
-        permissions: [[]],
+        amount: [0],
+        currency: ['USD'],
+        interval: ['month'],
+        interval_count: [1],
+        position: [1],
+        available_space: [null],
+        permissions: [null],
     });
 
     constructor(
@@ -94,11 +94,11 @@ export class CrupdatePlanModalComponent implements OnInit {
     }
 
     public getPayload() {
-        const payload = {...this.form.getRawValue()};
+        const payload: any = {...this.form.getRawValue()};
         payload.features = this.features$.value.map(feature => feature.content);
 
         const currency = this.currencies$.value.find(curr => curr.code === payload.currency);
-        payload.currency_symbol = currency.symbol;
+        payload.currency_symbol = currency?.symbol || '$';
 
         if (payload.interval === 'year') {
             payload.interval_count = 1;
@@ -129,8 +129,11 @@ export class CrupdatePlanModalComponent implements OnInit {
     }
 
     private hydrateModel(plan: Plan) {
-        this.form.patchValue(plan);
-        const newFeatures = plan.features.map(feature => {
+        this.form.patchValue({
+            ...plan,
+            permissions: null
+        });
+        const newFeatures = (plan.features || []).map(feature => {
             return {content: feature, id: randomString(5)};
         });
         this.form.get('amount').disable();
@@ -143,7 +146,7 @@ export class CrupdatePlanModalComponent implements OnInit {
             interval: 'month',
             interval_count: 1,
             position: 1,
-            permissions: [],
+            permissions: null,
             free: false,
             recommended: false,
             show_permissions: false,

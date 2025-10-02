@@ -21,7 +21,7 @@ import {NavigationEnd, Router} from '@angular/router';
 export class SidenavComponent implements OnInit, OnDestroy {
     navIsOpen$ = new BehaviorSubject<boolean>(false);
     isCompact$ = new BehaviorSubject<boolean>(false);
-    onDestroy$ = new Subject();
+    onDestroy$ = new Subject<void>();
 
     constructor(
         public breakpoints: BreakpointsService,
@@ -74,7 +74,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.onDestroy$.next();
+        this.onDestroy$.next(undefined);
     }
 
     toggleSidebarMode() {

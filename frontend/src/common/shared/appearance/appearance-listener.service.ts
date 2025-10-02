@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Router, RouterEvent} from '@angular/router';
+import {Router, Event as RouterEvent} from '@angular/router';
 import {Settings} from '../../core/config/settings.service';
 import {AppearanceCommand} from './commands/appearance-command';
 import {CommandTypes} from './commands/command-types';
@@ -96,7 +96,7 @@ export class AppearanceListenerService {
         const blockedRoutes = [];
         this.router.events
             .pipe(filter(e => e.toString().indexOf('NavigationStart') === 0))
-            .subscribe((e: RouterEvent) => {
+            .subscribe((e: any) => {
                 if (blockedRoutes.find(route => e.url.indexOf(route) > -1)) {
                     // prevent navigation to routes not specified in config
                     const current = this.router.url.split('?')[0];

@@ -110,7 +110,11 @@ export class CrupdateCreditModalComponent implements OnInit {
     }
 
     private getPayload() {
-        const payload = this.form.value;
+        const payload: any = {
+            ...this.form.value,
+            id: this.credit?.pivot?.id || 0,
+            order: this.credit?.pivot?.order || 0
+        };
         if (this.data.type === 'cast') {
             payload.department = 'cast';
             payload.job = 'cast';

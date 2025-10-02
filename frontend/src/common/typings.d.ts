@@ -29,7 +29,7 @@ interface WebKitFileSystem {
 
 type WebKitEntriesCallback = ((entries: WebKitEntry[]) => void) | { handleEvent(entries: WebKitEntry[]): void; };
 
-type WebKitErrorCallback = ((err: DOMError) => void) | { handleEvent(err: DOMError): void; };
+type WebKitErrorCallback = ((err: Error) => void) | { handleEvent(err: Error): void; };
 
 type WebKitFileCallback = ((file: File) => void) | { handleEvent(file: File): void; };
 

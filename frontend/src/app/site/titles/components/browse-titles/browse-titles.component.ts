@@ -58,17 +58,17 @@ export class BrowseTitlesComponent implements OnInit, OnDestroy {
 
     private formSub: Subscription;
     form = this.fb.group({
-        type: [],
-        genre: [],
-        released: [],
-        score: [],
-        country: [],
-        language: [],
-        runtime: [],
-        certification: [],
-        order: [],
-        onlyStreamable: [],
-        page: 1,
+        type: [null],
+        genre: [[]],
+        released: [[]],
+        score: [[]],
+        country: [null],
+        language: [null],
+        runtime: [null],
+        certification: [[]],
+        order: [null],
+        onlyStreamable: [false],
+        page: [1],
     });
 
     hasNext$ = combineLatest([this.loading$, this.pagination$]).pipe(
@@ -110,8 +110,22 @@ export class BrowseTitlesComponent implements OnInit, OnDestroy {
                 if (+value.page === +this.pagination$.value.current_page) {
                     value.page = 1;
                 }
+                const formValue: BrowseTitlesPageFormValues = {
+                    type: value.type || null,
+                    genre: value.genre || [],
+                    released: value.released || [],
+                    score: value.score || [],
+                    country: value.country || null,
+                    language: value.language || null,
+                    runtime: value.runtime || null,
+                    certification: value.certification || [],
+                    order: value.order || null,
+                    onlyStreamable: value.onlyStreamable || false,
+                    page: Number(value.page) || 1
+                };
+                const queryParams = this.formValuesToQueryParams(formValue);
                 this.router.navigate([], {
-                    queryParams: this.formValuesToQueryParams(value),
+                    queryParams,
                     replaceUrl: true,
                 });
             });
@@ -128,7 +142,7 @@ export class BrowseTitlesComponent implements OnInit, OnDestroy {
             );
 
             this.reloadTitles(formValues);
-            this.form.reset(formValues, {emitEvent: false});
+            this.form.reset(formValues as any, {emitEvent: false});
         });
     }
 
@@ -221,6 +235,8 @@ export class BrowseTitlesComponent implements OnInit, OnDestroy {
         }
         if (!formValues.page) {
             formValues.page = 1;
+        } else {
+            formValues.page = Number(formValues.page) || 1;
         }
         return formValues as BrowseTitlesPageFormValues;
     }

@@ -130,7 +130,8 @@ export class SelectTitleInputComponent implements OnInit, OnDestroy {
     }
 
     public prefixWithZero(number: number|string) {
-        if (number < 10) {
+        const num = Number(number);
+        if (num < 10) {
             number = '0' + number;
         }
         return number;

@@ -27,8 +27,9 @@ export class PersonResolverService implements Resolve<{seo: MetaTag[]}> {
                     this.router.navigateByUrl('/');
                     return of(null);
                 }),
-                mergeMap((store: {person: PersonStateModel}) => {
-                    return of({seo: store.person.metaTags});
+                mergeMap(() => {
+                    const person = this.store.selectSnapshot(state => state.person);
+                    return of({seo: person.metaTags});
                 })
             );
     }

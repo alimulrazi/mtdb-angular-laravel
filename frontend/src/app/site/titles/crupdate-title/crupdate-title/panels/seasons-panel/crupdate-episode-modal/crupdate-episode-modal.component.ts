@@ -37,7 +37,7 @@ export class CrupdateEpisodeModalComponent implements OnInit {
         description: ['', [Validators.minLength(1)]],
         popularity: [50, [Validators.min(1), Validators.max(1000)]],
         release_date: [''],
-        episode_number: [''],
+        episode_number: [1],
     });
 
     constructor(
@@ -54,6 +54,7 @@ export class CrupdateEpisodeModalComponent implements OnInit {
             this.bindToStoreEpisode();
             this.episodeForm.patchValue({
                 ...this.episode$.value,
+                episode_number: this.episode$.value.episode_number || 1,
                 release_date: this.episode$.value.release_date.split('T')[0]
             });
             setTimeout(() => this.loadEpisodeCredits());
@@ -76,7 +77,11 @@ export class CrupdateEpisodeModalComponent implements OnInit {
     }
 
     private createEpisode() {
-        this.store.dispatch(new CreateEpisode(this.data.season, this.episodeForm.value))
+        const formValue = {
+            ...this.episodeForm.value,
+            episode_number: Number(this.episodeForm.value.episode_number) || 1
+        };
+        this.store.dispatch(new CreateEpisode(this.data.season, formValue))
             .subscribe(() => {
                 this.errors$.next({});
                 this.toast.open(MESSAGES.EPISODE_CREATE_SUCCESS);
@@ -87,7 +92,11 @@ export class CrupdateEpisodeModalComponent implements OnInit {
     }
 
     private updateEpisode() {
-        this.store.dispatch(new UpdateEpisode(this.data.episode, this.episodeForm.value))
+        const formValue = {
+            ...this.episodeForm.value,
+            episode_number: Number(this.episodeForm.value.episode_number) || 1
+        };
+        this.store.dispatch(new UpdateEpisode(this.data.episode, formValue))
             .subscribe(() => {
                 this.errors$.next({});
                 this.toast.open(MESSAGES.EPISODE_UPDATE_SUCCESS);

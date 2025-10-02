@@ -1,25 +1,24 @@
-<mat-chip-list #chipList [selectable]="false">
-    <mat-chip
+<mat-chip-grid #chipList>
+    <mat-chip-row
         *ngFor="let item of items$ | async; index as i"
-        [selectable]="false"
         [removable]="!selectMode"
         (removed)="remove(i)"
     >
         {{displayChipValue(item)}}
         <mat-icon matChipRemove svgIcon="cancel"></mat-icon>
-    </mat-chip>
+    </mat-chip-row>
     <input [placeholder]="placeholder | trans"
            *ngIf="!selectMode"
            #inputEl
            [type]="type"
-           class="mat-chip-input mat-input-element"
+           class="mat-mdc-chip-input mat-mdc-input-element"
            [matChipInputFor]="chipList"
            [matChipInputAddOnBlur]="true"
            [matAutocomplete]="auto"
            [matAutocompleteConnectedTo]="{elementRef: el}"
            [formControl]="formControl"
            (matChipInputTokenEnd)="addFromChipInput($event.value)" />
-</mat-chip-list>
+</mat-chip-grid>
 
 <mat-autocomplete class="chip-input-autocomplete-panel" #auto="matAutocomplete" (optionSelected)="addFromAutocomplete($event.option.value)" [autoActiveFirstOption]="true">
     <mat-option *ngFor="let value of suggestedValues$ | async" [value]="value">{{displayChipValue(value)}}</mat-option>

@@ -17,7 +17,10 @@ export class NewLineModalComponent {
     constructor(private dialogRef: MatDialogRef<NewLineModalComponent>) {}
 
     public confirm() {
-        this.close(this.form.value);
+        const formValue = this.form.value;
+        if (formValue.key && formValue.value) {
+            this.close({key: formValue.key, value: formValue.value});
+        }
     }
 
     public close(line?: {key: string, value: string}) {

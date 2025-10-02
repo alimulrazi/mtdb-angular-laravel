@@ -27,7 +27,7 @@ export class ContentSettingsComponent extends SettingsPanelComponent implements 
     public languages$ = new BehaviorSubject<LanguageListItem[]>([]);
 
     public models$ = new BehaviorSubject<SearchableModel[]>([]);
-    public searchableModelControl = new FormControl(null);
+    public searchableModelControl = new FormControl<string>('');
 
     ngOnInit() {
         this.http.get<{models: SearchableModel[]}>('admin/search/models').subscribe(response => {

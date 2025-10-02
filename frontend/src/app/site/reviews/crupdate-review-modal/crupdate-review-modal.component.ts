@@ -49,10 +49,12 @@ export class CrupdateReviewModalComponent {
 
     public confirm() {
         this.loading$.next(true);
+        const mediaType: MEDIA_TYPE.TITLE | MEDIA_TYPE.EPISODE = this.data.mediaType === MEDIA_TYPE.EPISODE ? MEDIA_TYPE.EPISODE : MEDIA_TYPE.TITLE;
         const params = {
             ...this.reviewForm.value,
             mediaId: this.data.mediaId,
-            mediaType: this.data.mediaType || MEDIA_TYPE.TITLE,
+            mediaType,
+            score: this.reviewForm.value.score || 0,
         };
 
         const observable = this.data.review ?

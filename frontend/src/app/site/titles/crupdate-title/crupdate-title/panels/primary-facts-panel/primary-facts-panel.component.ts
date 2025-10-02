@@ -45,9 +45,9 @@ export class PrimaryFactsPanelComponent implements OnInit {
         poster: ['', [Validators.minLength(1), Validators.maxLength(250)]],
         backdrop: ['', [Validators.minLength(1), Validators.maxLength(250)]],
         description: ['', [Validators.minLength(1)]],
-        budget: ['', Validators.min(1)],
-        revenue: ['', Validators.min(1)],
-        runtime: ['', [Validators.min(1), Validators.max(300)]],
+        budget: [0, Validators.min(1)],
+        revenue: [0, Validators.min(1)],
+        runtime: [0, [Validators.min(1), Validators.max(300)]],
         country: ['', [Validators.minLength(1), Validators.maxLength(50)]],
         popularity: [1, [Validators.min(1), Validators.max(100)]],
         certification: ['pg'],
@@ -76,6 +76,9 @@ export class PrimaryFactsPanelComponent implements OnInit {
             .subscribe(title => {
                 this.form.patchValue({
                     ...title,
+                    budget: title.budget || 0,
+                    revenue: title.revenue || 0,
+                    runtime: title.runtime || 0,
                     release_date: title.release_date ? title.release_date.split('T')[0] : null,
                 });
                 this.poster$.next(title.poster);
@@ -105,9 +108,15 @@ export class PrimaryFactsPanelComponent implements OnInit {
     public submit() {
         this.store.dispatch(new ToggleLoading(true));
         const titleId = this.store.selectSnapshot(CrupdateTitleState.title).id;
+        const formValue = {
+            ...this.form.value,
+            budget: Number(this.form.value.budget) || 0,
+            revenue: Number(this.form.value.revenue) || 0,
+            runtime: Number(this.form.value.runtime) || 0
+        };
         const request = titleId ?
-            this.titles.update(titleId, this.form.value) :
-            this.titles.create(this.form.value);
+            this.titles.update(titleId, formValue) :
+            this.titles.create(formValue);
         request
             .pipe(finalize(() => this.store.dispatch(new ToggleLoading(false))))
             .subscribe(response => {

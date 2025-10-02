@@ -39,16 +39,16 @@ export class CrupdateVideoModalComponent implements OnInit {
     public qualities: string[] = [];
     public errors: {[key: string]: any} = {};
     public videoForm = this.fb.group({
-        name: [],
-        thumbnail: [],
-        url: [],
+        name: [''],
+        thumbnail: [''],
+        url: [''],
         quality: [null],
-        type: ['video'],
-        category: ['trailer'],
-        title: [],
-        title_id: [],
-        season_num: [],
-        episode_num: [],
+        type: ['video' as 'embed' | 'video' | 'stream' | 'external'],
+        category: ['trailer' as 'full' | 'trailer' | 'clip' | 'featurette' | 'teaser'],
+        title: [null],
+        title_id: [null],
+        season_num: [null],
+        episode_num: [null],
         language: ['en'],
         order: [0],
     });
@@ -108,6 +108,8 @@ export class CrupdateVideoModalComponent implements OnInit {
         const payload = this.videoForm.getRawValue();
         payload.title_id = payload.title ? payload.title.id : null;
         delete payload.title;
+        payload.type = payload.type as 'embed' | 'video' | 'stream' | 'external';
+        payload.category = payload.category as 'full' | 'trailer' | 'clip' | 'featurette' | 'teaser';
         return payload;
     }
 

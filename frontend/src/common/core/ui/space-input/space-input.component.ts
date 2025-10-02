@@ -33,7 +33,7 @@ export class SpaceInputComponent implements ControlValueAccessor, OnInit {
 
     ngOnInit() {
         this.form.valueChanges
-            .pipe(map(model => convertToBytes(model.amount, model.unit)))
+            .pipe(map(model => convertToBytes(model.amount, model.unit as any)))
             .subscribe(value => this.propagateChange(value));
     }
 

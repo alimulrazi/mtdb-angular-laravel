@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
         this.registerPolicies = this.settings.getJson('register_policies', []);
         this.registerPolicies.forEach(policy => {
             policy.id = slugifyString(policy.label, '_');
-            this.form.addControl(policy.id, new FormControl(false));
+            (this.form as any).addControl(policy.id, new FormControl(false));
         });
         if (this.recaptcha.enabledFor('registration')) {
             this.recaptcha.load();

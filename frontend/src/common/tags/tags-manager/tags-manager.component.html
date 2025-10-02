@@ -8,12 +8,12 @@
 <p class="main-info" *ngIf="!readonly" [transValues]="{tagName: pluralName}" trans>Separate :tagName with comma.</p>
 
 <div class="selected-tags">
-    <mat-chip-list [selectable]="false">
+    <mat-chip-set>
         <mat-chip (removed)="deselectTag(tag)" [removable]="!readonly" *ngFor="let tag of selectedTags$ | async">
             <span>{{tag}}</span>
             <mat-icon svgIcon="cancel" matChipRemove></mat-icon>
         </mat-chip>
-    </mat-chip-list>
+    </mat-chip-set>
 </div>
 
 <div class="existing-tags" *ngIf="!readonly">

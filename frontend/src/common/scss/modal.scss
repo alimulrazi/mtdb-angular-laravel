@@ -4,7 +4,7 @@ $close-button-size: 24px;
 
 .be-modal {
   // width: $modal-default-width;
-  
+
   .dialog-loading-bar {
     position: absolute;
     top: 0;
@@ -50,6 +50,7 @@ $close-button-size: 24px;
     color: mat-color($app-foreground, icon);
     transition: transform ease 0.2s;
     z-index: 999;
+    margin-right: 20px;
 
     &:hover {
       transform: rotate(90deg);

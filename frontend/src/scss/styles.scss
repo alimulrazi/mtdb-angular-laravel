@@ -1,4 +1,6 @@
 @import "common-imports";
+@import "../common/scss/mixins";
+@import "../common/scss/css-variables";
 
 button.more-less-button {
   padding-left: 5px;
