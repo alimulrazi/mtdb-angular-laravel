@@ -58,12 +58,21 @@
                                 "src/common/scss"
                             ]
                         },
-                        "vendorChunk": true,
                         "extractLicenses": false,
-                        "buildOptimizer": false,
                         "sourceMap": true,
                         "optimization": false,
-                        "namedChunks": true
+                        "allowedCommonJsDependencies": [
+                            "copy-to-clipboard",
+                            "swagger-ui",
+                            "deepmerge",
+                            "dot-object",
+                            "raven-js",
+                            "slugify",
+                            "fast-deep-equal",
+                            "prismjs",
+                            "chartist",
+                            "chartist-plugin-tooltips-updated"
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -82,10 +91,7 @@
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
-                            "namedChunks": false,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true
+                            "extractLicenses": true
                         }
                     },
                     "defaultConfiguration": ""
@@ -127,64 +133,9 @@
                     }
                 },
 
-                "server": {
-                    "builder": "@angular-devkit/build-angular:server",
-                    "options": {
-                        "outputPath": "dist/client/server",
-                        "main": "server.ts",
-                        "tsConfig": "tsconfig.server.json",
-                        "stylePreprocessorOptions": {
-                            "includePaths": [
-                                "src/scss",
-                                "src/common/scss"
-                            ]
-                        },
-                        "sourceMap": true,
-                        "optimization": false
-                    },
-                    "configurations": {
-                        "production": {
-                            "outputHashing": "media",
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
-                                }
-                            ],
-                            "sourceMap": false,
-                            "optimization": true
-                        }
-                    },
-                    "defaultConfiguration": ""
-                },
-                "serve-ssr": {
-                    "builder": "@nguniversal/builders:ssr-dev-server",
-                    "options": {
-                        "browserTarget": "client:build",
-                        "serverTarget": "client:server"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "client:build:production",
-                            "serverTarget": "client:server:production"
-                        }
-                    }
-                },
-                "prerender": {
-                    "builder": "@nguniversal/builders:prerender",
-                    "options": {
-                        "browserTarget": "client:build:production",
-                        "serverTarget": "client:server:production",
-                        "routes": [
-                            "/"
-                        ]
-                    },
-                    "configurations": {
-                        "production": {}
-                    }
-                }
+
+
             }
         }
-    },
-    "defaultProject": "client"
+    }
 }

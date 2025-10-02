@@ -12,7 +12,7 @@ $navbar-breakpoint: 1000px !default;
 $font-family: Roboto,'Helvetica Neue',sans-serif !default;
 
 // loading indicator
-$loading-indicator-color: mat-color($app-accent, default) !default;
+$loading-indicator-color: var(--be-accent-default) !default;
 $loading-indicator-width: 64px !default;
 $loading-indicator-height: 64px !default;
 
@@ -34,7 +34,7 @@ $social-icon-mail-color: #D54B3D !default;
 
 // Admin
 $admin-page-padding: 25px;
-$admin-card-border: 1px solid mat-color($app-foreground, divider);
+$admin-card-border: 1px solid var(--be-divider-default);
 $admin-card-box-shadow: none;
 
 // Navbar

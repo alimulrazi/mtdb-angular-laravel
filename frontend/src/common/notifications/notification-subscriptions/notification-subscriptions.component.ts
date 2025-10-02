@@ -107,9 +107,9 @@ export class NotificationSubscriptionsComponent implements OnInit {
 
     private getPayload(): UpdateNotificationSubscriptionsPayload {
         return Object.entries(this.form.controls)
-            .filter(([_, control]) => control.dirty)
+            .filter(([_, control]) => (control as FormGroup).dirty)
             .map(([notifId, control]) => {
-                return {notif_id: notifId, channels: control.value};
+                return {notif_id: notifId, channels: (control as FormGroup).value};
             });
     }
 }

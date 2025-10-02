@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {ColorpickerPanelComponent} from './colorpicker-panel.component';
-import {ColorPickerModule} from 'ngx-color-picker';
+import {SimpleColorPickerComponent} from './simple-color-picker.component';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {MatIconModule} from '@angular/material/icon';
 import {TranslationsModule} from '@common/core/translations/translations.module';
@@ -9,7 +9,7 @@ import {CommonModule} from '@angular/common';
 @NgModule({
     imports: [
         CommonModule,
-        ColorPickerModule,
+        // ColorPickerModule, // Temporarily disabled for Angular 18 compatibility
         OverlayModule,
         TranslationsModule,
 
@@ -18,9 +18,11 @@ import {CommonModule} from '@angular/common';
     ],
     declarations: [
         ColorpickerPanelComponent,
+        SimpleColorPickerComponent,
     ],
     exports: [
         ColorpickerPanelComponent,
+        SimpleColorPickerComponent,
     ],
 })
 export class BeColorPickerModule {

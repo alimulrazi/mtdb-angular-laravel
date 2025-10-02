@@ -50,7 +50,7 @@ export class BetweenInputComponent implements ControlValueAccessor {
         this.propagateChange = fn;
         this.form.valueChanges
             // only emit if user has set values to both to and from inputs
-            .pipe(filter(value => value.from && value.to))
+            .pipe(filter(value => !!(value.from && value.to)))
             .subscribe(value => {
                 const between = `${value.from}:${value.to}`;
                 this.propagateChange(between);

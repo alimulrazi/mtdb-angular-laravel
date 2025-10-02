@@ -88,7 +88,7 @@ export class CrupdateArticleComponent implements OnInit {
         });
     }
 
-    private getPayload(): NewsArticle {
+    private getPayload(): Partial<NewsArticle> {
         this.articleForm.get('body')
             .setValue(this.textEditor.getContents(), {emitEvent: false});
         return this.articleForm.value;

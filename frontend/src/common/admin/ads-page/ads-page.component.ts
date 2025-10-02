@@ -31,7 +31,15 @@ export class AdsPageComponent implements OnInit {
 
     public saveAds() {
         this.loading$.next(true);
-        this.settings.save({client: this.form.value})
+        const formValue = this.form.value;
+        const clientSettings: {[key: string]: string | number} = {};
+        
+        Object.keys(formValue).forEach(key => {
+            const value = formValue[key];
+            clientSettings[key] = typeof value === 'boolean' ? (value ? '1' : '0') : value;
+        });
+        
+        this.settings.save({client: clientSettings})
             .pipe(finalize(() => this.loading$.next(false)))
             .subscribe(() => {
                 this.toast.open('Ads updated');
@@ -54,7 +62,8 @@ export class AdsPageComponent implements OnInit {
         const settings = this.settings.getFlat() || {};
         this.form.patchValue({'ads.disable': settings['ads.disable']});
         this.allAds().forEach(ad => {
-            this.form.addControl(ad.slot, this.fb.control(settings[ad.slot]));
+            const control = this.fb.control(settings[ad.slot]);
+            (this.form as any).addControl(ad.slot, control);
         });
     }
 }

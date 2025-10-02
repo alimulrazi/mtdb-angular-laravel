@@ -4,6 +4,7 @@ import {
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {MatAutocomplete} from '@angular/material/autocomplete';
+import {MatChipGrid} from '@angular/material/chips';
 import {catchError, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Model} from '../../../types/models/model';
 
@@ -28,6 +29,7 @@ export class ChipInputComponent implements ControlValueAccessor, OnInit, AfterVi
     @Input() suggestFn: (query: string) => Observable<ChipValue[]>;
     @Input() @HostBinding('class.select-mode') selectMode = false;
     @ViewChild('auto') matAutocomplete: MatAutocomplete;
+    @ViewChild('chipList') chipList: MatChipGrid;
     @ViewChild('inputEl') inputEl: ElementRef<HTMLInputElement>;
     @ViewChild('selectModeTemplate') selectModeTemplate: TemplateRef<any>;
 
@@ -66,9 +68,9 @@ export class ChipInputComponent implements ControlValueAccessor, OnInit, AfterVi
         this.propagateChange(this.items$.value);
     }
 
-    public addFromChipInput(value: ChipValue, propagate = true) {
+    public addFromChipInput(value: string, propagate = true) {
         if (value && !this.matAutocomplete.isOpen && !this.selectMode) {
-            this.add(value, propagate);
+            this.add(value as ChipValue, propagate);
         }
     }
 

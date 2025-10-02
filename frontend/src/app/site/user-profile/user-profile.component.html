@@ -14,7 +14,7 @@
     </h1>
   </div>
 
-  <nav mat-tab-nav-bar color="accent">
+  <nav mat-tab-nav-bar color="accent" [tabPanel]="tabPanel">
     <a mat-tab-link [routerLink]="tabRoute('lists')" [active]="tabIsActive('lists')" trans>Lists</a>
     <a mat-tab-link [routerLink]="tabRoute('ratings')" [active]="tabIsActive('ratings')" trans
       >Ratings</a
@@ -27,9 +27,9 @@
     >
   </nav>
 
-  <div class="content">
+  <mat-tab-nav-panel #tabPanel class="content">
     <router-outlet></router-outlet>
-  </div>
+  </mat-tab-nav-panel>
 </div>
 
 <footer></footer>

@@ -10,12 +10,12 @@
 <div class="right-column">
     <div class="default-right-content" *ngIf="!showSelectedActions || !numberOfRowsSelected">
         <ng-container *ngIf="filterPanelTemplate">
-            <mat-chip-list aria-label="Active Filters" class="filter-chip-list">
-                <mat-chip *ngFor="let filter of filters$ | async | keyvalue" [removable]="true" [selectable]="false" (removed)="datatable.removeFilter(filter.key)">
+            <mat-chip-set aria-label="Active Filters" class="filter-chip-list">
+                <mat-chip *ngFor="let filter of filters$ | async | keyvalue" [removable]="true" (removed)="datatable.removeFilter(filter.key)">
                     {{filter.key | titleCase | trans}}: {{isModel(filter.value) ? (filter.value.name || filter.value.display_name) : filter.value}}
                     <mat-icon matChipRemove svgIcon="cancel"></mat-icon>
                 </mat-chip>
-            </mat-chip-list>
+            </mat-chip-set>
             <button (click)="openFiltersPanel()" class="filter-button" [class.active]="filterPanelRef" #filterButton mat-icon-button>
                 <mat-icon svgIcon="filter-list"></mat-icon>
             </button>

@@ -57,7 +57,7 @@ export class LandingAppearancePanelComponent implements OnInit {
         this.form.patchValue(data);
 
         this.form.valueChanges.subscribe(value => {
-            this.editor.setConfig(CONFIG_KEY, value);
+            this.editor.setConfig(CONFIG_KEY, JSON.stringify(value));
             this.editor.addChanges({[CONFIG_KEY]: value});
         });
     }

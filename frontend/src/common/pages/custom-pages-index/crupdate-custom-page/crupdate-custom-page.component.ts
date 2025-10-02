@@ -79,7 +79,7 @@ export class CrupdateCustomPageComponent implements OnInit {
         });
     }
 
-    private getPayload(): CustomPage {
+    private getPayload(): Partial<CustomPage> {
         return {...this.form.value};
     }
 

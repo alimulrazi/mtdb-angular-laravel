@@ -7,7 +7,7 @@ import {Model} from '../../core/types/models/model';
     selector: '[table-header-checkbox]',
     template: `
         <mat-checkbox
-            (change)="$event ? toggleAllRows() : null"
+            (change)="toggleAllRows()"
             [checked]="allRowsSelected()"
             [indeterminate]="anyRowsSelected() && ! allRowsSelected()">
         </mat-checkbox>
@@ -37,17 +37,19 @@ export class TableHeaderCheckboxComponent implements OnInit, OnDestroy{
     }
 
     public allRowsSelected() {
-        return this.datatable.selectedRows$.value.length &&
-            this.datatable.selectedRows$.value.length === this.datatable.data$.value?.length;
+        const data = this.datatable.data$.value;
+        const selected = this.datatable.selectedRows$.value;
+        return data && data.length > 0 && selected.length === data.length;
     }
 
     public toggleAllRows() {
+        const data = this.datatable.data$.value;
+        if (!data || data.length === 0) return;
+        
         if (this.allRowsSelected()) {
             this.datatable.selectedRows$.next([]);
         } else {
-            this.datatable.selectedRows$.next(
-                this.datatable.data$.value.map(v => v.id)
-            );
+            this.datatable.selectedRows$.next(data.map(v => v.id));
         }
     }
 }

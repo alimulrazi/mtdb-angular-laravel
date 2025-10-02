@@ -20,7 +20,7 @@ export class SubscriptionIndexFiltersComponent implements OnInit {
         private fb: FormBuilder,
         private datable: DatatableService<Plan>,
     ) {
-        this.form.patchValue(this.datable.filters$.value);
+        this.form.patchValue(this.datable.filters$.value as any);
     }
 
     ngOnInit() {

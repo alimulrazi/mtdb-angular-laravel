@@ -106,7 +106,11 @@ export class ListPageComponent implements OnInit, OnDestroy {
         const listId = this.route.snapshot.data.watchlist
             ? this.userLibrary.watchlist?.id
             : this.route.snapshot.params.id;
-        this.store.dispatch(new ReloadList(listId, this.listForm.value));
+        const formValue = {
+            sortBy: this.listForm.value.sortBy || 'pivot.order',
+            sortDir: (this.listForm.value.sortDir || 'asc') as 'desc' | 'asc'
+        };
+        this.store.dispatch(new ReloadList(listId, formValue));
     }
 
     public shareListSocially(type: ShareableNetworks | 'mail' | 'copy') {

@@ -5,7 +5,7 @@
 <div class="manage-permissions">
     <div class="no-permissions" *ngIf="!(permissions$ | async)?.length" trans>No permissions yet.</div>
 
-    <mat-chip-list [selectable]="false">
+    <mat-chip-set>
         <mat-chip (removed)="removePermission(permission.name)" [removable]="true" *ngFor="let permission of permissions$ | async">
             <span>
                 <span trans>{{permission.name}}</span>
@@ -15,5 +15,5 @@
             </span>
             <mat-icon svgIcon="cancel" matChipRemove></mat-icon>
         </mat-chip>
-    </mat-chip-list>
+    </mat-chip-set>
 </div>

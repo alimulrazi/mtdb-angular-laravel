@@ -57,9 +57,15 @@ export class CrupdateUserModalComponent implements OnInit {
         if (this.data.user) {
             // password input should always be empty
             this.form.patchValue({
-                ...this.data.user,
-                password: null,
-                email_verified_at: !!this.data.user.email_verified_at
+                email: this.data.user.email || '',
+                password: '',
+                avatar: this.data.user.avatar || '',
+                first_name: this.data.user.first_name || '',
+                last_name: this.data.user.last_name || '',
+                email_verified_at: !!this.data.user.email_verified_at,
+                available_space: this.data.user.available_space?.toString() || '',
+                roles: this.data.user.roles || [],
+                permissions: this.data.user.permissions || [],
             });
         }
     }
@@ -98,7 +104,7 @@ export class CrupdateUserModalComponent implements OnInit {
         if ( ! payload.password) {
             delete payload.password;
         }
-        payload.email_verified_at = payload.email_verified_at ? new Date() : null;
+        (payload as any).email_verified_at = payload.email_verified_at ? new Date() : null;
         return payload;
     }
 

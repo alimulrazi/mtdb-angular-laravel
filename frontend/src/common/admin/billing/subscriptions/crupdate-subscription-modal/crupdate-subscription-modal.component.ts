@@ -31,7 +31,7 @@ export class CrupdateSubscriptionModalComponent implements OnInit {
     public loading$ = new BehaviorSubject<boolean>(false);
 
     public form = this.fb.group({
-        plan_id: [''],
+        plan_id: [0],
         description: [''],
         renews_at: [''],
         ends_at: [''],
@@ -106,11 +106,17 @@ export class CrupdateSubscriptionModalComponent implements OnInit {
         if (subscription.user_id) {
             this.userAutocomplete.setValue(subscription.user);
         }
-        this.form.patchValue(data);
+        this.form.patchValue({
+            ...data,
+            plan_id: data.plan_id || 0
+        });
     }
     
     private getPayload() {
-        const payload = this.form.value as Partial<Subscription>;
+        const payload: any = {
+            ...this.form.value,
+            plan_id: Number(this.form.value.plan_id) || 0
+        };
 
         // if we are creating a new subscription, add user ID to payload
         if (!this.data.subscription && this.userAutocomplete.value) {

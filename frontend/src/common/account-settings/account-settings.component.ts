@@ -71,6 +71,7 @@ export class AccountSettingsComponent implements OnInit, AfterViewInit {
         language: [''],
         timezone: [''],
         country: [''],
+        avatar: [''],
     });
 
     public passwordForm = this.fb.group({

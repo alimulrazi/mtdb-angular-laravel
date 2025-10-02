@@ -1,10 +1,9 @@
-@import '~@angular/material/theming';
+@use '@angular/material' as mat;
 
 $app-mat-light-theme-foreground: () !default;
 $app-mat-light-theme-background: () !default;
 
-$app-primary: (
-        primary: true,
+$app-primary-palette: (
         100: var(--be-primary-lighter),
         500: var(--be-primary-default),
         700: var(--be-primary-darker),
@@ -15,8 +14,7 @@ $app-primary: (
         )
 );
 
-$app-accent: (
-        accent: true,
+$app-accent-palette: (
         100: var(--be-accent-lighter),
         500: var(--be-accent-default),
         emphasis: var(--be-accent-emphasis),
@@ -49,7 +47,7 @@ $mat-light-theme-foreground: map-merge(
     slider-min: var(--be-text),
     slider-off: var(--be-disabled-button-text),
     slider-off-active: var(--be-hint-text),
-    tooltip: map_get($mat-grey, 700),
+    tooltip: #666,
   )
 );
 $app-foreground: $mat-light-theme-foreground;
@@ -66,25 +64,87 @@ $mat-light-theme-background: map-merge(
     raised-button: var(--be-raised-button),
     focused-button: var(--be-disabled-button),
     selected-button: var(--be-selected-button),
-    selected-disabled-button: map_get($mat-grey, 400), // fixed via dark-mode-adjustments
+    selected-disabled-button: #bbb, // fixed via dark-mode-adjustments
     disabled-button-toggle: var(--be-disabled-toggle),
     unselected-chip: var(--be-chip),
     disabled-list-option: var(--be-disabled-toggle),
-    tooltip: map_get($mat-grey, 700),
+    tooltip: #666,
   )
 );
 $app-background: $mat-light-theme-background;
 
-$app-warn: mat-palette($mat-red);
-$app-success: mat-palette($mat-green, 600);
+$app-warn: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+$app-success: (
+  50: #e8f5e8,
+  100: #c8e6c8,
+  200: #a5d6a5,
+  300: #81c784,
+  400: #66bb6a,
+  500: #4caf50,
+  600: #43a047,
+  700: #388e3c,
+  800: #2e7d32,
+  900: #1b5e20,
+  A100: #b9f6ca,
+  A200: #69f0ae,
+  A400: #00e676,
+  A700: #00c853,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87),
+  )
+);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$app-primary: mat-palette($app-primary, 500, 100, 700);
-$app-accent: mat-palette($app-accent, 500, 100, 700);
+$app-primary: $app-primary-palette;
+$app-accent: $app-accent-palette;
 
-@function mat-color($palette, $hue: default, $opacity: null) {
+@function mat-color($palette, $hue: 500, $opacity: null) {
   @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
     @return mat-color($palette, default, $hue);
   }

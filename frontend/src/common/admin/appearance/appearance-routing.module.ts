@@ -14,9 +14,8 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         canDeactivate: [CanDeactivateAppearance],
         children: [
-            {path: ''},
-            {path: ':panel'},
-            {path: ':panel/:activeItem'},
+            {path: ':panel', redirectTo: ''},
+            {path: ':panel/:activeItem', redirectTo: ''},
         ]
     },
 ];

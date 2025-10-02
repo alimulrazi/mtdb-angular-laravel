@@ -2,7 +2,7 @@
 
 material-navbar {
   display: block;
-  color: mat-color($app-primary, default-contrast);
+  color: var(--be-accent-contrast);
   position: relative;
   z-index: 2;
   height: $material-navbar-height;
@@ -10,24 +10,24 @@ material-navbar {
 
   &:not(.transparent) {
     &.primary {
-      background-color: mat-color($app-primary, default);
+      background-color: var(--be-primary-default);
 
       .nav-searchbar {
-        background-color: mat-color($app-primary, lighter);
+        background-color: var(--be-primary-lighter);
       }
     }
 
     &.accent {
-      background-color: mat-color($app-accent, default);
+      background-color: var(--be-accent-default);
 
       .nav-searchbar {
-        background-color: mat-color($app-accent, emphasis);
+        background-color: var(--be-accent-emphasis);
       }
     }
   }
 
   &.box-shadow {
-    @include mat-elevation(2);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   }
 
   .navbar-container {
@@ -62,7 +62,7 @@ material-navbar {
 
   .text-logo {
     font-size: 2.2rem;
-    color: mat-color($app-primary, default-contrast);
+    color: var(--be-accent-contrast);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -99,15 +99,15 @@ material-navbar {
     margin-right: 30px;
 
     &:focus-within, &.always-white {
-      background-color: mat-color($app-background, dialog);
-      color: mat-color($app-foreground, text);
+      background-color: var(--be-background);
+      color: var(--be-text);
 
       &::placeholder {
-        color: mat-color($app-foreground, text);
+        color: var(--be-text);
       }
 
       & + .mat-icon-button {
-        color: mat-color($app-foreground, text);
+        color: var(--be-text);
       }
     }
 
@@ -123,7 +123,7 @@ material-navbar {
       &[aria-expanded=true] {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-        border-bottom: 1px solid mat-color($app-foreground, divider-lighter);
+        border-bottom: 1px solid var(--be-divider-lighter);
       }
     }
   }
@@ -147,13 +147,13 @@ material-navbar {
 
       input {
         border-radius: 0;
-        background-color: mat-color($app-background, dialog);
-        color: mat-color($app-foreground, text);
+        background-color: var(--be-background);
+        color: var(--be-text);
       }
     }
 
     .mobile-search-toggle {
-      color: mat-color($app-foreground, text);
+      color: var(--be-text);
       left: 35px;
     }
 
@@ -198,7 +198,7 @@ material-navbar {
 }
 
 .be-dark-mode material-navbar.primary:not(.mobile-search-active) .nav-searchbar input {
-  border: 1px solid mat-color($app-foreground, divider);
+  border: 1px solid var(--be-divider-default);
   background-color: transparent;
 }
 

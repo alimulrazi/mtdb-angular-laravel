@@ -8,7 +8,7 @@ const routes: Routes = [
         path: '',
         component: AnalyticsHostComponent,
         children: [
-            {path: '', redirectTo: 'google'},
+            {path: '', redirectTo: 'google', pathMatch: 'full'},
             {
                 path: 'google',
                 component: DefaultAnalyticsComponent,
@@ -21,4 +21,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class AnalyticsRoutingRoutingModule { }
+export class AnalyticsRoutingModule { }

@@ -20,7 +20,7 @@
 
   .description {
     display: block;
-    color: mat-color($app-foreground, secondary-text);
+    color: var(--be-secondary-text);
     margin-top: 3px;
   }
 
@@ -30,7 +30,7 @@
 }
 
 .mat-menu-item.active {
-  color: mat-color($app-primary, default);
+  color: var(--be-primary-default);
 
   .title {
     font-weight: 500;

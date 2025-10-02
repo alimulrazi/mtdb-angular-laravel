@@ -1,6 +1,7 @@
 @import "variables";
 
-body, html {
+body,
+html {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -19,18 +20,92 @@ html {
 
 body {
   font-family: $font-family;
-  color: mat-color($app-foreground, text);
-  background-color: mat-color($app-background, dialog);
+  color: var(--be-text);
+  background-color: var(--be-background);
   line-height: 1.42857143;
   font-size: 1.4rem;
   margin: 0;
+}
+
+// Ensure proper font sizes for Material components
+.mat-menu-item {
+  font-size: 1.4rem !important;
+}
+
+// Make buttons match standard text size
+.mat-button,
+.mat-raised-button,
+.mat-flat-button,
+.mat-stroked-button,
+.mat-icon-button,
+.mat-fab,
+.mat-mini-fab,
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-unelevated-button {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  margin: 0 4px !important;
+}
+
+.mat-toolbar,
+.mat-toolbar h1,
+.mat-toolbar h2,
+.mat-toolbar h3,
+.mat-toolbar h4 {
+  font-size: 1.6rem !important;
+}
+
+// Fix menu item heights and padding
+.mat-menu-item {
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+}
+
+// Reduce border radius for dialogs and buttons
+.mat-dialog-container,
+.mat-mdc-dialog-container,
+.mdc-dialog .mdc-dialog__surface,
+.mat-mdc-dialog-surface,
+.cdk-overlay-pane .mat-dialog-container,
+.cdk-overlay-pane .mat-mdc-dialog-container {
+  border-radius: 10px !important;
+}
+
+.mat-button,
+.mat-raised-button,
+.mat-flat-button,
+.mat-stroked-button,
+.mat-fab,
+.mat-mini-fab,
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-unelevated-button,
+.mdc-button,
+.mdc-fab {
+  border-radius: 10px !important;
+}
+
+.mat-mdc-button .mdc-button__ripple,
+.mat-mdc-raised-button .mdc-button__ripple,
+.mat-mdc-outlined-button .mdc-button__ripple,
+.mat-mdc-unelevated-button .mdc-button__ripple {
+  border-radius: 10px !important;
+}
+
+.mat-menu-panel {
+  border-radius: 10px !important;
 }
 
 //box-sizing
 body {
   box-sizing: border-box;
 
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
 }
@@ -38,4 +113,11 @@ body {
 .be-fullscreen-overlay-scrollblock {
   width: 100%;
   position: fixed;
+}
+
+// Form label font size
+.mat-form-field-label, .mat-mdc-form-field .mat-mdc-form-field-label,
+.mat-input-element::placeholder, .mat-mdc-input-element::placeholder,
+label, .form-label {
+  font-size: 12px !important;
 }

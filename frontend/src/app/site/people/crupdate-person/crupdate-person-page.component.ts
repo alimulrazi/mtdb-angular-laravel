@@ -37,7 +37,7 @@ export class CrupdatePersonPageComponent implements OnInit, OnDestroy {
     public personForm = this.fb.group({
         name: [''],
         poster: [''],
-        popularity: [''],
+        popularity: [0],
         description: [''],
         known_for: [''],
         birth_place: [''],
@@ -97,16 +97,23 @@ export class CrupdatePersonPageComponent implements OnInit, OnDestroy {
         if ( ! params.id) return;
         this.store.dispatch(new LoadPerson(+params.id)).subscribe(() => {
             const person = this.store.selectSnapshot(CrupdatePersonState.person);
-            this.personForm.patchValue(person);
+            this.personForm.patchValue({
+                ...person,
+                popularity: person.popularity || 0
+            });
             this.poster$.next(person.poster);
         });
     }
 
     public submit() {
         const person = this.store.selectSnapshot(CrupdatePersonState.person);
+        const formValue = {
+            ...this.personForm.value,
+            popularity: Number(this.personForm.value.popularity) || 0
+        };
         const response = person.id ?
-            this.store.dispatch(new UpdatePerson(this.personForm.value)) :
-            this.store.dispatch(new CreatePerson(this.personForm.value));
+            this.store.dispatch(new UpdatePerson(formValue)) :
+            this.store.dispatch(new CreatePerson(formValue));
 
         response.subscribe(() => {
             this.router.navigate([this.router.url.includes('admin') ? 'admin/people' : this.router.url.split('?')[0].replace('/edit', '')]);

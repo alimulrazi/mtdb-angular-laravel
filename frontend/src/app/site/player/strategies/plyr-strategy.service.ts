@@ -13,7 +13,7 @@ declare const Plyr: any;
 })
 export class PlyrStrategyService {
     player: any;
-    playbackEnded$ = new Subject();
+    playbackEnded$ = new Subject<void>();
     private video: Video;
 
     constructor(
@@ -109,7 +109,7 @@ export class PlyrStrategyService {
                 }
                 this.player = new Plyr(videoEl, plyrOptions);
                 this.player.on('ended', () => {
-                    this.playbackEnded$.next();
+                    this.playbackEnded$.next(undefined);
                 });
             });
         }
