@@ -77,3 +77,50 @@ npm start
 11. Visit here for frontend [http://localhost:4201/login](http://localhost:4201/login) to test the application
 
 
+### Prompt for upgrade Laravel Framework version is 8.83.29 to 10.10. 
+
+Current Laravel Framework version is 8.83.29. 
+I want to update it Laravel Framework laravel 10.10 version. 
+Do the necessary steps required for this upgrade in the backend folder.
+
+`updated composer.json`
+
+`composer update --with-all-dependencies
+composer update --ignore-platform-req=ext-pcntl --with-all-dependencies
+composer update --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix --with-all-dependencies
+composer update --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix
+composer update --ignore-platform-reqs --with-all-dependencies
+composer update --ignore-platform-reqs
+composer update --ignore-platform-reqs --with-all-dependencies
+composer update --ignore-platform-reqs --with-all-dependencies --no-interaction
+composer update --ignore-platform-reqs --with-all-dependencies --no-interaction --timeout=300
+composer update --ignore-platform-reqs --with-all-dependencies --no-interaction`
+
+```
+php artisan config:clear
+```
+```
+php artisan cache:clear
+```
+
+```
+php artisan route:clear
+```
+```
+php artisan view:clear
+```
+
+`del composer.lock`. Deleted old composer.lock file to update the version number in the artisan command
+
+```
+composer install --ignore-platform-reqs --no-interaction
+```
+```
+composer install --ignore-platform-reqs --no-interaction
+```
+```
+php artisan --version
+```
+```
+php artisan config:clear && php artisan cache:clear && php artisan route:clear
+```
