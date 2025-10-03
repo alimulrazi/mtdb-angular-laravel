@@ -7,7 +7,7 @@ use Api\Admin\Analytics\Actions\GetDemoAnalyticsData;
 use Api\Admin\Analytics\Actions\GetGoogleAnalyticsData;
 use Api\Admin\Analytics\Actions\GetNullAnalyticsData;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Analytics\Exceptions\InvalidConfiguration;
+
 
 class AnalyticsServiceProvider extends ServiceProvider
 {
@@ -34,7 +34,7 @@ class AnalyticsServiceProvider extends ServiceProvider
     {
         try {
             return $this->app->make(GetGoogleAnalyticsData::class);
-        } catch (InvalidConfiguration $e) {
+        } catch (\Exception $e) {
             return new GetNullAnalyticsData();
         }
     }

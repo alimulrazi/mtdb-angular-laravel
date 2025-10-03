@@ -5,8 +5,8 @@ namespace Api\Admin\Analytics\Actions;
 use Carbon\Carbon;
 use Google_Service_Analytics_GaData;
 use Illuminate\Support\Collection;
-use Spatie\Analytics\Analytics;
-use Spatie\Analytics\Period;
+use App\Analytics\Analytics;
+use App\Analytics\Period;
 
 class GetGoogleAnalyticsData implements GetAnalyticsData
 {

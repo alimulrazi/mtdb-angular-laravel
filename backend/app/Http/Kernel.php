@@ -9,7 +9,7 @@ use App\Http\Middleware\TrustHosts;
 use App\Http\Middleware\VerifyCsrfToken;
 use Api\Core\Middleware\PrerenderIfCrawler;
 use Api\Core\Middleware\TrustProxies;
-use Fruitcake\Cors\HandleCors;
+
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Auth\Middleware\AuthenticateWithBasicAuth;
 use Illuminate\Auth\Middleware\Authorize;
@@ -17,7 +17,7 @@ use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
+use Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance;
 use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
 use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -39,8 +39,8 @@ class Kernel extends HttpKernel
     protected $middleware = [
         TrustHosts::class,
         TrustProxies::class,
-        HandleCors::class,
-        CheckForMaintenanceMode::class,
+        \Illuminate\Http\Middleware\HandleCors::class,
+        PreventRequestsDuringMaintenance::class,
         ValidatePostSize::class,
         TrimStrings::class,
         ConvertEmptyStringsToNull::class,
