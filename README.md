@@ -124,3 +124,14 @@ php artisan --version
 ```
 php artisan config:clear && php artisan cache:clear && php artisan route:clear
 ```
+
+
+### Access Swagger documentation:
+```
+http://localhost:8082/secure/documentation
+```
+
+### Generate documentation (when ready):
+```
+php artisan l5-swagger:generate
+```

@@ -14,6 +14,12 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+/**
+ * @OA\Tag(
+ *     name="Files",
+ *     description="API Endpoints for file management"
+ * )
+ */
 class FileEntriesController extends BaseController
 {
     use TransformsFileEntryResponse;
@@ -34,6 +40,35 @@ class FileEntriesController extends BaseController
         $this->entry = $entry;
     }
 
+    /**
+     * @OA\Get(
+     *     path="/secure/uploads",
+     *     tags={"Files"},
+     *     summary="Get file entries",
+     *     description="Get paginated list of file entries",
+     *     security={{"sanctum":{}}},
+     *     @OA\Parameter(
+     *         name="userId",
+     *         in="query",
+     *         description="Filter by user ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Parameter(
+     *         name="page",
+     *         in="query",
+     *         description="Page number",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="pagination", type="object")
+     *         )
+     *     )
+     * )
+     */
     public function index()
     {
         $params = $this->request->all();
@@ -71,6 +106,46 @@ class FileEntriesController extends BaseController
     }
 
     /**
+     * @OA\Post(
+     *     path="/secure/uploads",
+     *     tags={"Files"},
+     *     summary="Upload file",
+     *     description="Upload a new file",
+     *     security={{"sanctum":{}}},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="file",
+     *                     type="string",
+     *                     format="binary",
+     *                     description="File to upload"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="parentId",
+     *                     type="integer",
+     *                     description="Parent folder ID"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="disk",
+     *                     type="string",
+     *                     description="Storage disk",
+     *                     example="private"
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="File uploaded successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="fileEntry", type="object")
+     *         )
+     *     )
+     * )
      * @param UploadFileRequest $request
      * @return JsonResponse
      */
