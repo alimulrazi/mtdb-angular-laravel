@@ -28,7 +28,6 @@ class Episode extends Model
 
     protected $guarded = ['id'];
     protected $appends = ['model_type', 'rating', 'vote_count'];
-    protected $dates = ['release_date'];
 
     protected $casts = [
         'id' => 'integer',
@@ -42,6 +41,7 @@ class Episode extends Model
         'popularity' => 'integer',
         'rating' => 'float',
         'vote_count' => 'integer',
+        'release_date' => 'datetime',
     ];
 
     public $hidden = [
@@ -112,5 +112,17 @@ class Episode extends Model
     public static function getModelTypeAttribute(): string
     {
         return self::MODEL_TYPE;
+    }
+    
+    public static function updateOrCreateEpisode(array $attributes)
+    {
+        return static::updateOrCreate(
+            [
+                'title_id' => $attributes['title_id'],
+                'season_number' => $attributes['season_number'],
+                'episode_number' => $attributes['episode_number'],
+            ],
+            $attributes
+        );
     }
 }

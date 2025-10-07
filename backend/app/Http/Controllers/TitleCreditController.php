@@ -34,6 +34,37 @@ class TitleCreditController extends BaseController
     }
 
     /**
+     * Get title credits for display in table
+     *
+     * @return JsonResponse
+     */
+    public function index()
+    {
+        $this->authorize('index', Title::class);
+
+        $credits = DB::table('creditables')
+            ->join('people', 'creditables.person_id', '=', 'people.id')
+            ->join('titles', 'creditables.creditable_id', '=', 'titles.id')
+            ->where('creditables.creditable_type', Title::class)
+            ->select(
+                'creditables.id',
+                'creditables.job',
+                'creditables.department',
+                'creditables.character',
+                'creditables.order',
+                'people.name as person_name',
+                'people.id as person_id',
+                'titles.name as title_name',
+                'titles.id as title_id'
+            )
+            ->orderBy('titles.name')
+            ->orderBy('creditables.order')
+            ->paginate(15);
+
+        return $this->success(['pagination' => $credits]);
+    }
+
+    /**
      * Update title or episode "creditable" pivot record.
      *
      * @param int $id

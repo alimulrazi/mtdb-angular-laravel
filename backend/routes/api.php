@@ -3,6 +3,7 @@
 use App\Http\Controllers\EpisodeController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\ListItemController;
+use App\Http\Controllers\ListOrderController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PersonCreditsController;
@@ -14,6 +15,8 @@ use App\Http\Controllers\TitleCreditController;
 use App\Http\Controllers\UserProfileController;
 use Api\Auth\Controllers\GetAccessTokenController;
 use Api\Auth\Controllers\RegisterController;
+use Api\Auth\Controllers\SocialAuthController;
+use Api\Auth\Controllers\SendPasswordResetEmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +38,7 @@ Route::group(['prefix' => 'v1'], function() {
         Route::get('titles/{id}/related', [RelatedTitlesController::class, 'index']);
         Route::get('titles', [TitleController::class, 'index']);
         Route::post('titles', [TitleController::class, 'store']);
+        Route::get('titles/credits', [TitleCreditController::class, 'index']);
         Route::post('titles/credits', [TitleCreditController::class, 'store']);
         Route::post('titles/credits/reorder', [TitleCreditController::class, 'changeOrder']);
         Route::put('titles/credits/{id}', [TitleCreditController::class, 'update']);
@@ -56,7 +60,7 @@ Route::group(['prefix' => 'v1'], function() {
         Route::get('lists/{id}', [ListController::class, 'show']);
         Route::post('lists', [ListController::class, 'store']);
         Route::put('lists/{id}', [ListController::class, 'update']);
-        Route::post('lists/{id}/reorder', 'ListOrderController@changeOrder');
+        Route::post('lists/{id}/reorder', [ListOrderController::class, 'changeOrder']);
         Route::delete('lists/{id}', [ListController::class, 'destroy']);
         Route::post('lists/{id}/add',  [ListItemController::class, 'add']);
         Route::post('lists/{id}/remove', [ListItemController::class, 'remove']);
@@ -81,6 +85,6 @@ Route::group(['prefix' => 'v1'], function() {
     // AUTH
     Route::post('auth/register', [RegisterController::class, 'register']);
     Route::post('auth/login', [GetAccessTokenController::class, 'login']);
-    Route::get('auth/social/{provider}/callback', '\Common\Auth\Controllers\SocialAuthController@loginCallback');
-    Route::post('auth/password/email', '\Common\Auth\Controllers\SendPasswordResetEmailController@sendResetLinkEmail');
+    Route::get('auth/social/{provider}/callback', [SocialAuthController::class, 'loginCallback']);
+    Route::post('auth/password/email', [SendPasswordResetEmailController::class, 'sendResetLinkEmail']);
 });
