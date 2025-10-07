@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Episode;
-use App\Person;
-use App\Season;
+use App\Models\Episode;
+use App\Models\Person;
+use App\Models\Season;
 use DB;
-use App\Title;
+use App\Models\Title;
 use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

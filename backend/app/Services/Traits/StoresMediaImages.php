@@ -2,8 +2,8 @@
 
 namespace App\Services\Traits;
 
-use App\Person;
-use App\Title;
+use App\Models\Person;
+use App\Models\Title;
 use Illuminate\Support\Collection;
 
 trait StoresMediaImages

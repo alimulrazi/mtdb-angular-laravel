@@ -2,7 +2,7 @@
 
 namespace Api\Comments;
 
-use App\User;
+use App\Models\User;
 use Auth;
 use Api\Comments\Notifications\CommentReceivedReply;
 use Illuminate\Support\Arr;

@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Season;
+use App\Models\Season;
 use App\Services\Data\Tmdb\TmdbApi;
 use App\Services\Titles\Retrieve\LoadSeasonData;
 use App\Services\Titles\Store\StoreSeasonData;
-use App\Title;
+use App\Models\Title;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Collection;
 

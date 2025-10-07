@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Person;
+use App\Models\Person;
 use App\Season;
 use App\Services\Data\Tmdb\TmdbApi;
 use App\Services\People\Store\StorePersonData;
@@ -10,7 +10,7 @@ use App\Services\Titles\Retrieve\FindOrCreateMediaItem;
 use App\Services\Titles\Store\StoreSeasonData;
 use App\Services\Titles\Store\StoreTitleData;
 use App\Services\Traits\HandlesTitleId;
-use App\Title;
+use App\Models\Title;
 use Api\Core\BaseController;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;

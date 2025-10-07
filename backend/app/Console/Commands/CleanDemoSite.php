@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\ListModel;
-use App\User;
+use App\Models\ListModel;
+use App\Models\User;
 use Artisan;
 use Api\Auth\Permissions\Permission;
 use Api\Auth\Permissions\Traits\SyncsPermissions;

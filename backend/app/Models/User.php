@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Api\Auth\BaseUser;
 use Api\Comments\Comment;

@@ -3,7 +3,7 @@
 namespace App\Services\Reviews;
 
 use DB;
-use App\Review;
+use App\Models\Review;
 
 class UpdateReviewableAverageScore
 {

@@ -2,9 +2,9 @@
 
 namespace App\Services\Admin;
 
-use App\Person;
-use App\Title;
-use App\User;
+use App\Models\Person;
+use App\Models\Title;
+use App\Models\User;
 use Api\Admin\Analytics\Actions\GetAnalyticsHeaderDataAction;
 
 class GetAnalyticsHeaderData implements GetAnalyticsHeaderDataAction

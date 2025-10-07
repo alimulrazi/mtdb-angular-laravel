@@ -1,6 +1,6 @@
 <?php namespace Api\Core\Bootstrap;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Api\Admin\Appearance\Themes\CssTheme;
 use Api\Auth\Roles\Role;

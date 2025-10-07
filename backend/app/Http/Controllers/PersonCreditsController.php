@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Person;
+use App\Models\Person;
 use App\Services\People\Retrieve\GetPersonCredits;
 use App\Services\Titles\Retrieve\FindOrCreateMediaItem;
 use Api\Core\BaseController;

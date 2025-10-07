@@ -2,7 +2,7 @@
 
 namespace App\Actions\Plays;
 
-use App\Video;
+use App\Models\Video;
 use Api\Plays\LogModelPlay;
 use Illuminate\Database\Eloquent\Model;
 

@@ -2,7 +2,7 @@
 
 namespace Api\Notifications;
 
-use App\User;
+use App\Models\User;
 use NotificationChannels\Fcm\FcmChannel;
 
 trait GetsUserPreferredChannels

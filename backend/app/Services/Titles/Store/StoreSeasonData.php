@@ -2,8 +2,8 @@
 
 namespace App\Services\Titles\Store;
 
-use App\Season;
-use App\Title;
+use App\Models\Season;
+use App\Models\Title;
 
 class StoreSeasonData
 {

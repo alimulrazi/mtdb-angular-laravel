@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $user_service_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read \App\User $user
+ * @property-read \App\Models\User $user
  * @method static Builder|SocialProfile whereId($value)
  * @mixin \Eloquent
  * @property string $username
@@ -26,7 +26,7 @@ class SocialProfile extends Model {
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }
 }
 

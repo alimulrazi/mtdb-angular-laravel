@@ -1,12 +1,12 @@
 <?php namespace App\Services;
 
 use App;
-use App\Episode;
-use App\ListModel;
-use App\NewsArticle;
-use App\Person;
-use App\Season;
-use App\Title;
+use App\Models\Episode;
+use App\Models\ListModel;
+use App\Models\NewsArticle;
+use App\Models\Person;
+use App\Models\Season;
+use App\Models\Title;
 use Api\Admin\Sitemap\BaseSitemapGenerator;
 
 class SitemapGenerator extends BaseSitemapGenerator

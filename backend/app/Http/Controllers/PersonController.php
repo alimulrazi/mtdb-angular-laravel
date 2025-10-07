@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\IncrementModelViews;
-use App\Person;
+use App\Models\Person;
 use App\Services\People\Retrieve\GetPersonCredits;
 use App\Services\People\Store\StorePersonData;
 use App\Services\Titles\Retrieve\FindOrCreateMediaItem;

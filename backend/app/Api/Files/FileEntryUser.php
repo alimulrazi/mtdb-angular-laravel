@@ -2,7 +2,7 @@
 
 namespace Api\Files;
 
-use App\User;
+use App\Models\User;
 use Api\Auth\BaseUser;
 
 /**

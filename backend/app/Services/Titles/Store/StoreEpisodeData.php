@@ -2,11 +2,11 @@
 
 namespace App\Services\Titles\Store;
 
-use App\Episode;
-use App\Person;
-use App\Season;
+use App\Models\Episode;
+use App\Models\Person;
+use App\Models\Season;
 use App\Services\Titles\Store\StoreCredits;
-use App\Title;
+use App\Models\Title;
 
 class StoreEpisodeData
 {

@@ -2,7 +2,7 @@
 
 namespace Api\Core\Policies;
 
-use App\User;
+use App\Models\User;
 use Api\Auth\BaseUser;
 use Api\Auth\Roles\Role;
 use Api\Core\Exceptions\AccessResponseWithAction;

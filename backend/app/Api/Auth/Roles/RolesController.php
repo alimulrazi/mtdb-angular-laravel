@@ -1,6 +1,6 @@
 <?php namespace Api\Auth\Roles;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Api\Core\BaseController;

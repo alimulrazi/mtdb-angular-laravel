@@ -2,7 +2,7 @@
 
 namespace Api\Core\Bootstrap;
 
-use App\User;
+use App\Models\User;
 use Api\Localizations\LocalizationsRepository;
 use Spatie\Color\Hex;
 use Spatie\Color\Rgb;

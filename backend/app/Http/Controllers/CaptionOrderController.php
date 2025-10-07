@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
-use App\Video;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;

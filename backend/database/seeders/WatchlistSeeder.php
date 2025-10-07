@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\ListModel;
-use App\User;
+use App\Models\ListModel;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class WatchlistSeeder extends Seeder

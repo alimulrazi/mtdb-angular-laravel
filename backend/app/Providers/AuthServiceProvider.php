@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\ListModel;
+use App\Models\ListModel;
 use App\Policies\ListPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 

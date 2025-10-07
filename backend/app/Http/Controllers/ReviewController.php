@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Episode;
-use App\Review;
+use App\Models\Episode;
+use App\Models\Review;
 use App\Services\Reviews\UpdateReviewableAverageScore;
-use App\Title;
+use App\Models\Title;
 use Auth;
 use Api\Core\BaseController;
 use Api\Database\Datasource\MysqlDataSource;

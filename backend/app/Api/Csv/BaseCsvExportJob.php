@@ -2,7 +2,7 @@
 
 namespace Api\Csv;
 
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

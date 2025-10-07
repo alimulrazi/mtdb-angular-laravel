@@ -2,7 +2,7 @@
 
 namespace Api\Domains;
 
-use App\User;
+use App\Models\User;
 use Api\Core\Policies\BasePolicy;
 
 class CustomDomainPolicy extends BasePolicy

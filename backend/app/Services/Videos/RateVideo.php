@@ -2,8 +2,8 @@
 
 namespace App\Services\Videos;
 
-use App\Video;
-use App\VideoRating;
+use App\Models\Video;
+use App\Models\VideoRating;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
 

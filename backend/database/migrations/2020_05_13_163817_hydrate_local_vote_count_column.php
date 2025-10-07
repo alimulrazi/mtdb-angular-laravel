@@ -1,8 +1,8 @@
 <?php
 
-use App\Episode;
-use App\Review;
-use App\Title;
+use App\Models\Episode;
+use App\Models\Review;
+use App\Models\Title;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Migrations\Migration;
 

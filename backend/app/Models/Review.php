@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Api\Search\Searchable;
 use Illuminate\Database\Eloquent\Model;

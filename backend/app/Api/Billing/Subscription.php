@@ -1,7 +1,7 @@
 <?php namespace Api\Billing;
 
 use App;
-use App\User;
+use App\Models\User;
 use Api\Billing\Gateways\Contracts\GatewayInterface;
 use Api\Billing\Gateways\GatewayFactory;
 use Carbon\Carbon;

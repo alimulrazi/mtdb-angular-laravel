@@ -1,6 +1,6 @@
 <?php namespace Api\Pages;
 
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Api\Search\Searchable;
 use Api\Tags\Tag;

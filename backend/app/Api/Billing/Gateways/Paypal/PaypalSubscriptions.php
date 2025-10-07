@@ -1,6 +1,6 @@
 <?php namespace Api\Billing\Gateways\Paypal;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Carbon\Carbon;
 use Api\Billing\BillingPlan;

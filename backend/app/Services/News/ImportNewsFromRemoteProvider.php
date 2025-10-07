@@ -2,7 +2,7 @@
 
 namespace App\Services\News;
 
-use App\NewsArticle;
+use App\Models\NewsArticle;
 use App\Services\Data\Contracts\NewsProviderInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Str;

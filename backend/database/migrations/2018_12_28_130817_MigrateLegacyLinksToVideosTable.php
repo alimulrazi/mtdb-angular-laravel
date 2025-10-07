@@ -1,6 +1,6 @@
 <?php
 
-use App\Video;
+use App\Models\Video;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Migrations\Migration;
 

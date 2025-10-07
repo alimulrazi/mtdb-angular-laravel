@@ -3,7 +3,7 @@
 namespace Api\Comments\Notifications;
 
 use App\Services\UrlGenerator;
-use App\User;
+use App\Models\User;
 use Api\Comments\Comment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;

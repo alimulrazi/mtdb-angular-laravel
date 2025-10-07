@@ -1,6 +1,6 @@
 <?php namespace Api\Database\Seeds;
 
-use App\User;
+use App\Models\User;
 use Api\Admin\Appearance\Themes\CssTheme;
 use Api\Settings\Setting;
 use Illuminate\Database\Eloquent\Builder;

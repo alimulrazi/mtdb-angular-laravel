@@ -2,12 +2,12 @@
 
 namespace App\Services;
 
-use App\Episode;
-use App\NewsArticle;
-use App\Person;
-use App\Season;
-use App\Title;
-use App\User;
+use App\Models\Episode;
+use App\Models\NewsArticle;
+use App\Models\Person;
+use App\Models\Season;
+use App\Models\Title;
+use App\Models\User;
 use Api\Core\Prerender\BaseUrlGenerator;
 use Api\Tags\Tag;
 

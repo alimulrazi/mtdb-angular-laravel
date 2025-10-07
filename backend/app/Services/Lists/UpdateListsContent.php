@@ -2,12 +2,12 @@
 
 namespace App\Services\Lists;
 
-use App\Listable;
-use App\ListModel;
+use App\Models\Listable;
+use App\Models\ListModel;
 use App\Services\Data\Contracts\DataProvider;
 use App\Services\Titles\Retrieve\FindOrCreateMediaItem;
 use App\Services\Titles\Store\StoreTitleData;
-use App\Title;
+use App\Models\Title;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Collection;
 use Str;

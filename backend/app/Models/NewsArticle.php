@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Api\Pages\CustomPage;
 use Illuminate\Database\Eloquent\Builder;

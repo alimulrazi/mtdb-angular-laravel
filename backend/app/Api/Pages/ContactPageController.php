@@ -1,6 +1,6 @@
 <?php namespace Api\Pages;
 
-use App\User;
+use App\Models\User;
 use Api\Core\BaseController;
 use Api\Notifications\ContactPageMessage;
 use Api\Settings\Settings;

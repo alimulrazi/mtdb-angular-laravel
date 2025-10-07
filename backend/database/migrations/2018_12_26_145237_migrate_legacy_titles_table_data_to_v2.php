@@ -1,9 +1,9 @@
 <?php
 
-use App\Image;
-use App\Person;
-use App\Title;
-use App\Video;
+use App\Models\Image;
+use App\Models\Person;
+use App\Models\Title;
+use App\Models\Video;
 use Api\Tags\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\QueryException;

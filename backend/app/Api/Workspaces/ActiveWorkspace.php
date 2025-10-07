@@ -2,7 +2,7 @@
 
 namespace Api\Workspaces;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Auth;
 

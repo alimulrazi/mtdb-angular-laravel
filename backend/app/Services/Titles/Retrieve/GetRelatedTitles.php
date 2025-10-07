@@ -2,7 +2,7 @@
 
 namespace App\Services\Titles\Retrieve;
 
-use App\Title;
+use App\Models\Title;
 use Api\Settings\Settings;
 use DB;
 use Illuminate\Support\Arr;

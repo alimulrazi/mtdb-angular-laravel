@@ -2,7 +2,7 @@
 
 namespace Api;
 
-use App\User;
+use App\Models\User;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Clockwork\Support\Laravel\ClockworkServiceProvider;
 use Api\Admin\Analytics\AnalyticsServiceProvider;

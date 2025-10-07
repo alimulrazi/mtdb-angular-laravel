@@ -1,6 +1,6 @@
 <?php namespace Api\Auth\Roles;
 
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Api\Auth\Permissions\Permission;
 use Api\Auth\Permissions\Traits\HasPermissionsRelation;

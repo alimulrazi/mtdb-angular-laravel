@@ -1,6 +1,6 @@
 <?php namespace Api\Auth;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Auth;
 use Carbon\Carbon;

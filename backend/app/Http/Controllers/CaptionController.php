@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Actions\Caption\CrupdateCaption;
 use App\Http\Requests\CrupdateCaptionRequest;
-use App\Video;
-use App\VideoCaption;
+use App\Models\Video;
+use App\Models\VideoCaption;
 use Api\Core\BaseController;
 use Api\Database\Paginator;
 use Illuminate\Http\Request;

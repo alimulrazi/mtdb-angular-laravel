@@ -4,7 +4,7 @@ use Api\Auth\Events\UserAvatarChanged;
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Http\JsonResponse;
 use Storage;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Api\Core\BaseController;
 

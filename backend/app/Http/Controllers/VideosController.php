@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\Plays\LogVideoPlay;
 use App\Services\Videos\CrupdateVideo;
-use App\Video;
+use App\Models\Video;
 use Api\Core\BaseController;
 use Api\Database\Datasource\MysqlDataSource;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

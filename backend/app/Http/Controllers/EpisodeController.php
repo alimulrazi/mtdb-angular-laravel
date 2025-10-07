@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Episode;
-use App\Season;
-use App\Title;
+use App\Models\Episode;
+use App\Models\Season;
+use App\Models\Title;
 use Carbon\Carbon;
 use Api\Core\BaseController;
 use Illuminate\Database\Query\Builder;

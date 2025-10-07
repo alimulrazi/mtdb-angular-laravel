@@ -70,7 +70,7 @@ body {
 .mat-mdc-dialog-surface,
 .cdk-overlay-pane .mat-dialog-container,
 .cdk-overlay-pane .mat-mdc-dialog-container {
-  border-radius: 10px !important;
+  border-radius: 5px !important;
 }
 
 .mat-button,
@@ -85,18 +85,18 @@ body {
 .mat-mdc-unelevated-button,
 .mdc-button,
 .mdc-fab {
-  border-radius: 10px !important;
+  border-radius: 5px !important;
 }
 
 .mat-mdc-button .mdc-button__ripple,
 .mat-mdc-raised-button .mdc-button__ripple,
 .mat-mdc-outlined-button .mdc-button__ripple,
 .mat-mdc-unelevated-button .mdc-button__ripple {
-  border-radius: 10px !important;
+  border-radius: 5px !important;
 }
 
 .mat-menu-panel {
-  border-radius: 10px !important;
+  border-radius: 5px !important;
 }
 
 //box-sizing
@@ -116,8 +116,11 @@ body {
 }
 
 // Form label font size
-.mat-form-field-label, .mat-mdc-form-field .mat-mdc-form-field-label,
-.mat-input-element::placeholder, .mat-mdc-input-element::placeholder,
-label, .form-label {
+.mat-form-field-label,
+.mat-mdc-form-field .mat-mdc-form-field-label,
+.mat-input-element::placeholder,
+.mat-mdc-input-element::placeholder,
+label,
+.form-label {
   font-size: 12px !important;
 }

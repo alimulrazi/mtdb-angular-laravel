@@ -1,6 +1,6 @@
 <?php namespace Api\Files;
 
-use App\User;
+use App\Models\User;
 use Auth;
 use Carbon\Carbon;
 use Api\Files\Traits\HandlesEntryPaths;

@@ -2,7 +2,7 @@
 
 namespace Api\Billing\Invoices;
 
-use App\User;
+use App\Models\User;
 use Api\Core\Policies\BasePolicy;
 
 class InvoicePolicy extends BasePolicy
