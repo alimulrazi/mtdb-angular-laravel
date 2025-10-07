@@ -18,34 +18,39 @@ use DB;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Validation\ValidationException;
 
 class TitleController extends BaseController
 {
-    /**
-     * @var Request
-     */
-    private $request;
+    public function __construct(
+        private readonly Request $request,
+        private readonly Title $title
+    ) {}
 
-    /**
-     * @var Title
-     */
-    private $title;
-
-    public function __construct(Request $request, Title $title)
+    private function validateTitleData(array $data): array
     {
-        $this->request = $request;
-        $this->title = $title;
+        return $this->validate($this->request, [
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'release_date' => 'nullable|date',
+            'runtime' => 'nullable|integer|min:1',
+        ]);
     }
 
-    public function index()
+    public function index(): JsonResponse
     {
         $this->authorize('index', Title::class);
 
-        $pagination = app(PaginateTitles::class)->execute(
-            $this->request->all(),
-        );
+        try {
+            $pagination = app(PaginateTitles::class)->execute(
+                $this->request->all(),
+            );
 
-        return $this->success(['pagination' => $pagination]);
+            return $this->success(['pagination' => $pagination]);
+        } catch (\Exception $e) {
+            return $this->error('Failed to retrieve titles', 500);
+        }
     }
 
     /**
@@ -138,13 +143,20 @@ class TitleController extends BaseController
     /**
      * @return JsonResponse
      */
-    public function store()
+    public function store(): JsonResponse
     {
         $this->authorize('store', Title::class);
 
-        $title = $this->title->create($this->request->all());
+        try {
+            $validatedData = $this->validateTitleData($this->request->all());
+            $title = $this->title->create($validatedData);
 
-        return $this->success(['title' => $title]);
+            return $this->success(['title' => $title], 201);
+        } catch (ValidationException $e) {
+            return $this->error('Validation failed', 422, $e->errors());
+        } catch (\Exception $e) {
+            return $this->error('Failed to create title', 500);
+        }
     }
 
     public function destroy()

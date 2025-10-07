@@ -20,37 +20,53 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Str;
+use App\Models\Scopes\TitleScopes;
+
+enum TitleType: string
+{
+    case MOVIE = 'movie';
+    case SERIES = 'series';
+}
+
+enum ProviderType: string
+{
+    case LOCAL = 'local';
+    case TMDB = 'tmdb';
+}
 
 /**
- * Class Title
- * @property integer $id;
- * @property boolean $allow_update;
- * @property boolean $fully_synced;
- * @property string $model_type;
- * @property boolean $series_ended;
- * @property Carbon $updated_at;
- * @property Carbon $release_date;
- * @property-read Collection $keywords;
- * @property-read Collection $genres;
- * @property-read Collection $videos;
- * @property-read Collection $images;
- * @property-read Collection|Season[] $seasons;
- * @property-read int $seasons_count;
- * @property Season $season;
- * @property integer $season_count;
- * @property string|null $tmdb_id;
- * @method whereGenre(string|array $genres);
+ * @property int $id
+ * @property string $name
+ * @property string|null $original_title
+ * @property string|null $description
+ * @property bool $allow_update
+ * @property bool $fully_synced
+ * @property bool $series_ended
+ * @property Carbon|null $release_date
+ * @property int|null $year
+ * @property int|null $runtime
+ * @property float|null $rating
+ * @property int $views
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @property-read Collection<Genre> $genres
+ * @property-read Collection<Video> $videos
+ * @property-read Collection<Image> $images
+ * @property-read Collection<Season> $seasons
  */
 class Title extends Model
 {
-    use HasCreditableRelation, Searchable;
+    use HasCreditableRelation, Searchable, TitleScopes;
 
-    const MOVIE_TYPE = 'movie';
-    const SERIES_TYPE = 'series';
-    const MODEL_TYPE = 'title';
-    const LOCAL_PROVIDER = 'local';
+    public const MODEL_TYPE = 'title';
 
-    protected $guarded = ['id', 'type'];
+    protected $fillable = [
+        'name', 'original_title', 'description', 'poster', 'backdrop',
+        'release_date', 'runtime', 'budget', 'revenue', 'popularity',
+        'tmdb_id', 'imdb_id', 'is_series', 'season_count', 'episode_count',
+        'allow_update', 'fully_synced', 'series_ended', 'adult'
+    ];
+    
     protected $dates = ['release_date'];
     protected $appends = ['rating', 'model_type', 'vote_count'];
 
