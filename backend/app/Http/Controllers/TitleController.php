@@ -28,15 +28,7 @@ class TitleController extends BaseController
         private readonly Title $title
     ) {}
 
-    private function validateTitleData(array $data): array
-    {
-        return $this->validate($this->request, [
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'release_date' => 'nullable|date',
-            'runtime' => 'nullable|integer|min:1',
-        ]);
-    }
+
 
     public function index(): JsonResponse
     {
@@ -49,7 +41,7 @@ class TitleController extends BaseController
 
             return $this->success(['pagination' => $pagination]);
         } catch (\Exception $e) {
-            return $this->error('Failed to retrieve titles', 500);
+            return $this->error('Failed to retrieve titles', [], 500);
         }
     }
 
@@ -147,16 +139,9 @@ class TitleController extends BaseController
     {
         $this->authorize('store', Title::class);
 
-        try {
-            $validatedData = $this->validateTitleData($this->request->all());
-            $title = $this->title->create($validatedData);
+        $title = $this->title->create($this->request->all());
 
-            return $this->success(['title' => $title], 201);
-        } catch (ValidationException $e) {
-            return $this->error('Validation failed', 422, $e->errors());
-        } catch (\Exception $e) {
-            return $this->error('Failed to create title', 500);
-        }
+        return $this->success(['title' => $title], 201);
     }
 
     public function destroy()

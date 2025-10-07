@@ -59,6 +59,7 @@ class Title extends Model
     use HasCreditableRelation, Searchable, TitleScopes;
 
     public const MODEL_TYPE = 'title';
+    public const LOCAL_PROVIDER = 'local';
 
     protected $fillable = [
         'name', 'original_title', 'description', 'poster', 'backdrop',
@@ -215,8 +216,9 @@ class Title extends Model
     {
         $this->attributes['release_date'] = $value;
 
-        if ($this->release_date) {
-            $this->attributes['year'] = $this->release_date->year;
+        if ($value) {
+            $date = $value instanceof Carbon ? $value : Carbon::parse($value);
+            $this->attributes['year'] = $date->year;
         }
     }
 

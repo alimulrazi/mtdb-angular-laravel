@@ -38,6 +38,7 @@ Route::group(['prefix' => 'v1'], function() {
         Route::get('titles/{id}/related', [RelatedTitlesController::class, 'index']);
         Route::get('titles', [TitleController::class, 'index']);
         Route::post('titles', [TitleController::class, 'store']);
+        Route::get('titles/credits', [TitleCreditController::class, 'index']);
         Route::post('titles/credits', [TitleCreditController::class, 'store']);
         Route::post('titles/credits/reorder', [TitleCreditController::class, 'changeOrder']);
         Route::put('titles/credits/{id}', [TitleCreditController::class, 'update']);
