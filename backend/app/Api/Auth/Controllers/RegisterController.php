@@ -39,6 +39,36 @@ class RegisterController extends BaseController
         if ($this->settings->get('disable.registration')) abort(404);
     }
 
+    /**
+     * @OA\Post(
+     *     path="/secure/auth/register",
+     *     tags={"Authentication"},
+     *     summary="User registration",
+     *     description="Register a new user account",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             required={"email","password","password_confirmation"},
+     *             @OA\Property(property="email", type="string", format="email", example="user@example.com"),
+     *             @OA\Property(property="password", type="string", example="password123"),
+     *             @OA\Property(property="password_confirmation", type="string", example="password123"),
+     *             @OA\Property(property="token_name", type="string", example="mobile_app")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful registration",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="bootstrapData", type="object")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation error"
+     *     )
+     * )
+     */
     public function register(Request $request)
     {
         $this->validate($request, [

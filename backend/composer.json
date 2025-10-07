@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.1",
         "cocur/slugify": "^4.0",
+        "darkaonline/l5-swagger": "8.5",
         "doctrine/dbal": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "hashids/hashids": "^4.0",
@@ -32,16 +33,16 @@
         "meilisearch/meilisearch-php": "^0.18.2",
         "omnipay/paypal": "^3.0",
         "omnipay/stripe": "^3.0",
+        "opis/closure": "^3.6",
         "pda/pheanstalk": "^4.0",
         "predis/predis": "^2.0",
         "pusher/pusher-php-server": "^7.2",
         "sentry/sentry-laravel": "^4.0",
-        "teamtnt/laravel-scout-tntsearch-driver": "^13.0",
+        "spatie/color": "^1.2",
         "spatie/flysystem-dropbox": "^2.0",
         "symfony/dom-crawler": "^5.1",
-        "torann/geoip": "^3.0",
-        "spatie/color": "^1.2",
-        "opis/closure": "^3.6"
+        "teamtnt/laravel-scout-tntsearch-driver": "^13.0",
+        "torann/geoip": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",

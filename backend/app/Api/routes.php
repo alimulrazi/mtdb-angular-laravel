@@ -173,6 +173,354 @@ Route::group(['prefix' => 'secure', 'middleware' => 'web'], function () {
     Route::apiResource('billing-plan', BillingPlansController::class);
     Route::post('billing-plan/sync', [BillingPlansController::class, 'sync']);
 
+    // SWAGGER DOCUMENTATION
+    Route::get('api-docs.json', function () {
+        return response()->json([
+            'openapi' => '3.0.0',
+            'info' => [
+                'title' => 'MTDB API Documentation',
+                'version' => '1.0.0',
+                'description' => 'Complete API documentation for MTDB - Ultimate Movie & TV Database'
+            ],
+            'servers' => [
+                ['url' => 'http://localhost:8082', 'description' => 'Development Server']
+            ],
+            'components' => [
+                'securitySchemes' => [
+                    'bearerAuth' => [
+                        'type' => 'http',
+                        'scheme' => 'bearer',
+                        'bearerFormat' => 'JWT'
+                    ]
+                ]
+            ],
+            'paths' => [
+                '/secure/auth/login' => [
+                    'post' => [
+                        'tags' => ['Authentication'],
+                        'summary' => 'User login',
+                        'requestBody' => [
+                            'required' => true,
+                            'content' => [
+                                'application/json' => [
+                                    'schema' => [
+                                        'type' => 'object',
+                                        'required' => ['email', 'password'],
+                                        'properties' => [
+                                            'email' => ['type' => 'string', 'format' => 'email'],
+                                            'password' => ['type' => 'string']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'Login successful'],
+                            '422' => ['description' => 'Validation error']
+                        ]
+                    ]
+                ],
+                '/secure/auth/register' => [
+                    'post' => [
+                        'tags' => ['Authentication'],
+                        'summary' => 'User registration',
+                        'requestBody' => [
+                            'required' => true,
+                            'content' => [
+                                'application/json' => [
+                                    'schema' => [
+                                        'type' => 'object',
+                                        'required' => ['email', 'password', 'password_confirmation'],
+                                        'properties' => [
+                                            'email' => ['type' => 'string', 'format' => 'email'],
+                                            'password' => ['type' => 'string'],
+                                            'password_confirmation' => ['type' => 'string']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'Registration successful'],
+                            '422' => ['description' => 'Validation error']
+                        ]
+                    ]
+                ],
+                '/secure/auth/logout' => [
+                    'post' => [
+                        'tags' => ['Authentication'],
+                        'summary' => 'User logout',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Logout successful']
+                        ]
+                    ]
+                ],
+                '/secure/users' => [
+                    'get' => [
+                        'tags' => ['Users'],
+                        'summary' => 'Get users list',
+                        'security' => [['bearerAuth' => []]],
+                        'parameters' => [
+                            ['name' => 'page', 'in' => 'query', 'schema' => ['type' => 'integer']],
+                            ['name' => 'per_page', 'in' => 'query', 'schema' => ['type' => 'integer']]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'Users list retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Users'],
+                        'summary' => 'Create new user',
+                        'security' => [['bearerAuth' => []]],
+                        'requestBody' => [
+                            'required' => true,
+                            'content' => [
+                                'application/json' => [
+                                    'schema' => [
+                                        'type' => 'object',
+                                        'required' => ['email', 'password'],
+                                        'properties' => [
+                                            'email' => ['type' => 'string', 'format' => 'email'],
+                                            'password' => ['type' => 'string'],
+                                            'first_name' => ['type' => 'string'],
+                                            'last_name' => ['type' => 'string']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        'responses' => [
+                            '201' => ['description' => 'User created successfully']
+                        ]
+                    ]
+                ],
+                '/secure/users/{id}' => [
+                    'get' => [
+                        'tags' => ['Users'],
+                        'summary' => 'Get user details',
+                        'parameters' => [
+                            ['name' => 'id', 'in' => 'path', 'required' => true, 'schema' => ['type' => 'integer']]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'User details retrieved successfully']
+                        ]
+                    ],
+                    'put' => [
+                        'tags' => ['Users'],
+                        'summary' => 'Update user',
+                        'security' => [['bearerAuth' => []]],
+                        'parameters' => [
+                            ['name' => 'id', 'in' => 'path', 'required' => true, 'schema' => ['type' => 'integer']]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'User updated successfully']
+                        ]
+                    ]
+                ],
+                '/secure/uploads' => [
+                    'get' => [
+                        'tags' => ['Files'],
+                        'summary' => 'Get file entries',
+                        'security' => [['bearerAuth' => []]],
+                        'parameters' => [
+                            ['name' => 'userId', 'in' => 'query', 'schema' => ['type' => 'integer']],
+                            ['name' => 'page', 'in' => 'query', 'schema' => ['type' => 'integer']]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'File entries retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Files'],
+                        'summary' => 'Upload file',
+                        'security' => [['bearerAuth' => []]],
+                        'requestBody' => [
+                            'required' => true,
+                            'content' => [
+                                'multipart/form-data' => [
+                                    'schema' => [
+                                        'type' => 'object',
+                                        'properties' => [
+                                            'file' => ['type' => 'string', 'format' => 'binary'],
+                                            'parentId' => ['type' => 'integer'],
+                                            'disk' => ['type' => 'string']
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        'responses' => [
+                            '201' => ['description' => 'File uploaded successfully']
+                        ]
+                    ]
+                ],
+                '/secure/settings' => [
+                    'get' => [
+                        'tags' => ['Settings'],
+                        'summary' => 'Get application settings',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Settings retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Settings'],
+                        'summary' => 'Update application settings',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Settings updated successfully']
+                        ]
+                    ]
+                ],
+                '/secure/roles' => [
+                    'get' => [
+                        'tags' => ['Roles'],
+                        'summary' => 'Get roles list',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Roles retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Roles'],
+                        'summary' => 'Create new role',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '201' => ['description' => 'Role created successfully']
+                        ]
+                    ]
+                ],
+                '/secure/billing-plan' => [
+                    'get' => [
+                        'tags' => ['Billing'],
+                        'summary' => 'Get billing plans',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Billing plans retrieved successfully']
+                        ]
+                    ]
+                ],
+                '/secure/billing/subscriptions' => [
+                    'get' => [
+                        'tags' => ['Billing'],
+                        'summary' => 'Get user subscriptions',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Subscriptions retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Billing'],
+                        'summary' => 'Create new subscription',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '201' => ['description' => 'Subscription created successfully']
+                        ]
+                    ]
+                ],
+                '/secure/localizations' => [
+                    'get' => [
+                        'tags' => ['Localization'],
+                        'summary' => 'Get localizations',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Localizations retrieved successfully']
+                        ]
+                    ]
+                ],
+                '/secure/tags' => [
+                    'get' => [
+                        'tags' => ['Tags'],
+                        'summary' => 'Get tags list',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Tags retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Tags'],
+                        'summary' => 'Create new tag',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '201' => ['description' => 'Tag created successfully']
+                        ]
+                    ]
+                ],
+                '/secure/workspace' => [
+                    'get' => [
+                        'tags' => ['Workspace'],
+                        'summary' => 'Get workspaces',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Workspaces retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Workspace'],
+                        'summary' => 'Create new workspace',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '201' => ['description' => 'Workspace created successfully']
+                        ]
+                    ]
+                ],
+                '/secure/comment' => [
+                    'get' => [
+                        'tags' => ['Comments'],
+                        'summary' => 'Get comments',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Comments retrieved successfully']
+                        ]
+                    ],
+                    'post' => [
+                        'tags' => ['Comments'],
+                        'summary' => 'Create new comment',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '201' => ['description' => 'Comment created successfully']
+                        ]
+                    ]
+                ],
+                '/secure/notifications' => [
+                    'get' => [
+                        'tags' => ['Notifications'],
+                        'summary' => 'Get user notifications',
+                        'security' => [['bearerAuth' => []]],
+                        'responses' => [
+                            '200' => ['description' => 'Notifications retrieved successfully']
+                        ]
+                    ]
+                ],
+                '/secure/search/global/model' => [
+                    'get' => [
+                        'tags' => ['Search'],
+                        'summary' => 'Global model search',
+                        'security' => [['bearerAuth' => []]],
+                        'parameters' => [
+                            ['name' => 'query', 'in' => 'query', 'schema' => ['type' => 'string']]
+                        ],
+                        'responses' => [
+                            '200' => ['description' => 'Search results retrieved successfully']
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+    });
+    
+    Route::get('documentation', function () {
+        return view('l5-swagger::index', [
+            'documentation' => 'default',
+            'urlToDocs' => url('secure/api-docs.json'),
+            'useAbsolutePath' => config('l5-swagger.documentations.default.paths.use_absolute_path', true),
+            'operationsSorter' => config('l5-swagger.defaults.operations_sort'),
+            'configUrl' => config('l5-swagger.defaults.additional_config_url'),
+            'validatorUrl' => config('l5-swagger.defaults.validator_url')
+        ]);
+    });
+
     // SUBSCRIPTIONS
     Route::get('billing/subscriptions', [SubscriptionsController::class, 'index']);
     Route::post('billing/subscriptions', [SubscriptionsController::class, 'store']);

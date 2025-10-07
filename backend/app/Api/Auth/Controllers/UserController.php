@@ -10,6 +10,12 @@ use Api\Auth\UserRepository;
 use Api\Core\BaseController;
 use Api\Auth\Requests\ModifyUsers;
 
+/**
+ * @OA\Tag(
+ *     name="Users",
+ *     description="API Endpoints for user management"
+ * )
+ */
 class UserController extends BaseController
 {
     /**
@@ -46,6 +52,35 @@ class UserController extends BaseController
         $this->settings = $settings;
     }
 
+    /**
+     * @OA\Get(
+     *     path="/secure/users",
+     *     tags={"Users"},
+     *     summary="Get users list",
+     *     description="Get paginated list of users",
+     *     security={{"sanctum":{}}},
+     *     @OA\Parameter(
+     *         name="page",
+     *         in="query",
+     *         description="Page number",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Parameter(
+     *         name="per_page",
+     *         in="query",
+     *         description="Items per page",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="pagination", type="object")
+     *         )
+     *     )
+     * )
+     */
     public function index()
     {
         $this->authorize('index', User::class);
@@ -55,6 +90,35 @@ class UserController extends BaseController
         return $this->success(['pagination' => $pagination]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/secure/users/{id}",
+     *     tags={"Users"},
+     *     summary="Get user details",
+     *     description="Get details of a specific user",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="User ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Parameter(
+     *         name="with",
+     *         in="query",
+     *         description="Relations to include",
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="user", type="object")
+     *         )
+     *     )
+     * )
+     */
     public function show(User $user)
     {
         $relations = array_filter(
@@ -80,6 +144,33 @@ class UserController extends BaseController
         return $this->success(['user' => $user]);
     }
 
+    /**
+     * @OA\Post(
+     *     path="/secure/users",
+     *     tags={"Users"},
+     *     summary="Create new user",
+     *     description="Create a new user account",
+     *     security={{"sanctum":{}}},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             required={"email","password"},
+     *             @OA\Property(property="email", type="string", format="email"),
+     *             @OA\Property(property="password", type="string"),
+     *             @OA\Property(property="first_name", type="string"),
+     *             @OA\Property(property="last_name", type="string")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="User created successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="user", type="object")
+     *         )
+     *     )
+     * )
+     */
     public function store(ModifyUsers $request)
     {
         $this->authorize('store', User::class);
