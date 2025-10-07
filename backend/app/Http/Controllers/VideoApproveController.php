@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Video;
-use App\VideoRating;
+use App\Models\Video;
+use App\Models\VideoRating;
 use Api\Core\BaseController;
 use Illuminate\Http\Request;
 use App\Services\Videos\RateVideo;

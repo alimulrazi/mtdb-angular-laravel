@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\ListModel;
+use App\Models\ListModel;
 use App\Services\Lists\UpdateListsContent;
 use Illuminate\Console\Command;
 

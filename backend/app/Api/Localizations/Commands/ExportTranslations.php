@@ -1,7 +1,7 @@
 <?php namespace Api\Localizations\Commands;
 
 use App\Services\Admin\GetAnalyticsHeaderData;
-use App\User;
+use App\Models\User;
 use Auth;
 use Api\Auth\Permissions\Permission;
 use Api\Core\Values\ValueLists;
@@ -70,7 +70,7 @@ class ExportTranslations extends Command
 
         return [];
     }
-    
+
     private function getDefaultMenuLabels()
     {
         $menus = Arr::first(config('common.default-settings'), function($setting) {

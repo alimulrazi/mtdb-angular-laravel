@@ -2,12 +2,12 @@
 
 namespace App\Services\Titles\Store;
 
-use App\Image;
-use App\Person;
-use App\Season;
+use App\Models\Image;
+use App\Models\Person;
+use App\Models\Season;
 use App\Services\Traits\StoresMediaImages;
-use App\Title;
-use App\Video;
+use App\Models\Title;
+use App\Models\Video;
 use Carbon\Carbon;
 use Api\Tags\Tag;
 use Illuminate\Support\Arr;

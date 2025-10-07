@@ -2,10 +2,10 @@
 
 namespace App\Services\Titles\Retrieve;
 
-use App\Episode;
-use App\Season;
+use App\Models\Episode;
+use App\Models\Season;
 use App\Services\Titles\Store\StoreSeasonData;
-use App\Title;
+use App\Models\Title;
 use Carbon\Carbon;
 use Api\Settings\Settings;
 use GuzzleHttp\Exception\ClientException;

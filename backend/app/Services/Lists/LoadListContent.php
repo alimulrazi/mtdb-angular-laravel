@@ -2,11 +2,11 @@
 
 namespace App\Services\Lists;
 
-use App\Episode;
-use App\Listable;
-use App\ListModel;
-use App\Person;
-use App\Title;
+use App\Models\Episode;
+use App\Models\Listable;
+use App\Models\ListModel;
+use App\Models\Person;
+use App\Models\Title;
 use Arr;
 use Api\Settings\Settings;
 use Illuminate\Database\Eloquent\Relations\HasMany;

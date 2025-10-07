@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Api\Auth\Permissions\Permission;
 use Api\Auth\Roles\Role;
 use Api\Billing\BillingPlan;

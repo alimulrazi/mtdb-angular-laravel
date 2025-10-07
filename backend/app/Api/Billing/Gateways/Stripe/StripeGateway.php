@@ -1,6 +1,6 @@
 <?php namespace Api\Billing\Gateways\Stripe;
 
-use App\User;
+use App\Models\User;
 use Api\Billing\GatewayException;
 use Api\Billing\Gateways\Contracts\GatewayInterface;
 use Illuminate\Http\Request;

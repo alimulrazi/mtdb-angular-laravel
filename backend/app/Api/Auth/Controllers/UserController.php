@@ -1,6 +1,6 @@
 <?php namespace Api\Auth\Controllers;
 
-use App\User;
+use App\Models\User;
 use Auth;
 use Api\Auth\Actions\PaginateUsers;
 use Api\Settings\Settings;

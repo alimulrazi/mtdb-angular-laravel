@@ -2,7 +2,7 @@
 
 namespace Api\Core\Policies;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Api\Files\FileEntry;
 use Api\Files\FileEntryUser;

@@ -1,6 +1,6 @@
 <?php namespace Api\Auth;
 
-use App\User;
+use App\Models\User;
 use Api\Auth\Events\UserCreated;
 use Api\Auth\Events\UsersDeleted;
 use Api\Auth\Permissions\Traits\SyncsPermissions;

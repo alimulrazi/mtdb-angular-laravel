@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Episode;
+use App\Models\Episode;
 use App\Services\Titles\Retrieve\GetRelatedTitles;
-use App\Title;
-use App\Video;
+use App\Models\Title;
+use App\Models\Video;
 use Api\Core\BaseController;
 use Api\Settings\Settings;
 use Illuminate\Database\Eloquent\Collection;

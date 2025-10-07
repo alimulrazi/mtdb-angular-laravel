@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\NewsArticle;
+use App\Models\NewsArticle;
 use App\Services\Data\Contracts\NewsProviderInterface;
 use App\Services\News\ImportNewsFromRemoteProvider;
 use Carbon\Carbon;

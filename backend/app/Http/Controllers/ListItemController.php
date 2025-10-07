@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Listable;
+use App\Models\Listable;
 use App\Services\Lists\AttachListItem;
 use Carbon\Carbon;
 use DB;
-use App\Title;
-use App\Person;
-use App\Episode;
-use App\ListModel;
+use App\Models\Title;
+use App\Models\Person;
+use App\Models\Episode;
+use App\Models\ListModel;
 use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

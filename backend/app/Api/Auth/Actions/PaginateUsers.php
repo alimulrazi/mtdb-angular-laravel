@@ -2,7 +2,7 @@
 
 namespace Api\Auth\Actions;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Api\Database\Datasource\MysqlDataSource;
 use Illuminate\Database\Eloquent\Builder;

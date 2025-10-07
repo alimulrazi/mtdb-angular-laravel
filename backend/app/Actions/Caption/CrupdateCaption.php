@@ -2,7 +2,7 @@
 
 namespace App\Actions\Caption;
 
-use App\VideoCaption;
+use App\Models\VideoCaption;
 use Auth;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;

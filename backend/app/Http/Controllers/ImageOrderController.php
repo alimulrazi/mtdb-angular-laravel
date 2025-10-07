@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\ListModel;
-use App\Title;
+use App\Models\ListModel;
+use App\Models\Title;
 use Api\Core\BaseController;
 use DB;
 use Illuminate\Http\JsonResponse;

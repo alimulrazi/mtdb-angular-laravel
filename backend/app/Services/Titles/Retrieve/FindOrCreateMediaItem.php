@@ -2,8 +2,8 @@
 
 namespace App\Services\Titles\Retrieve;
 
-use App\Person;
-use App\Title;
+use App\Models\Person;
+use App\Models\Title;
 use App\Services\Traits\HandlesTitleId;
 use Illuminate\Support\Str;
 

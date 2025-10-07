@@ -2,10 +2,10 @@
 
 namespace App\Services\Data\Local;
 
-use App\Episode;
-use App\Person;
+use App\Models\Episode;
+use App\Models\Person;
 use App\Services\Data\Contracts\DataProvider;
-use App\Title;
+use App\Models\Title;
 use Arr;
 use Carbon\Carbon;
 use Api\Tags\Tag;

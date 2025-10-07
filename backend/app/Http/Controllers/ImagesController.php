@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Image;
+use App\Models\Image;
 use App\Services\Images\StoreMediaImageOnDisk;
-use App\Title;
+use App\Models\Title;
 use Api\Core\BaseController;
 use Illuminate\Http\Request;
 use Image as ImageManager;

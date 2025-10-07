@@ -2,7 +2,7 @@
 
 namespace Api\Comments;
 
-use App\User;
+use App\Models\User;
 use Api\Files\Traits\HandlesEntryPaths;
 use Eloquent;
 use Carbon\Carbon;

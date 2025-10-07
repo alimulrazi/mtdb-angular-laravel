@@ -1,6 +1,6 @@
 <?php namespace Api\Billing\Gateways\Stripe;
 
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Api\Billing\BillingPlan;
 use Api\Billing\GatewayException;

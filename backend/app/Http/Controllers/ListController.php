@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ListModel;
+use App\Models\ListModel;
 use App\Services\Lists\DeleteLists;
 use App\Services\Lists\LoadListContent;
 use App\Services\Lists\UpdateListsContent;

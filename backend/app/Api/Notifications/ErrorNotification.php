@@ -2,7 +2,7 @@
 
 namespace Api\Notifications;
 
-use App\User;
+use App\Models\User;
 use Api\Settings\Settings;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;

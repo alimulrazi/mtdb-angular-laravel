@@ -2,7 +2,7 @@
 
 namespace Api\Auth\Jobs;
 
-use App\User;
+use App\Models\User;
 use Api\Csv\BaseCsvExportJob;
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;

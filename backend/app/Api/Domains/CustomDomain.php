@@ -2,7 +2,7 @@
 
 namespace Api\Domains;
 
-use App\User;
+use App\Models\User;
 use Api\Search\Searchable;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property string|null $resource_type
  * @property int|null $workspace_id
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $resource
- * @property-read \App\User $user
+ * @property-read \App\Models\User $user
  * @method static Builder|CustomDomain basicSearch(string $query)
  * @method static \Illuminate\Database\Eloquent\Builder|LinkDomain newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|LinkDomain newQuery()

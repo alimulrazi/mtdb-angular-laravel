@@ -2,7 +2,7 @@
 
 namespace Api\Workspaces\Controllers;
 
-use App\User;
+use App\Models\User;
 use Auth;
 use Api\Core\BaseController;
 use Api\Workspaces\Actions\JoinWorkspace;

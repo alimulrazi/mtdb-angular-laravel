@@ -2,8 +2,8 @@
 
 namespace App\Services\Lists;
 
-use App\Listable;
-use App\ListModel;
+use App\Models\Listable;
+use App\Models\ListModel;
 use Api\Settings\Settings;
 use Illuminate\Support\Collection;
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Video;
-use App\VideoReport;
+use App\Models\Video;
+use App\Models\VideoReport;
 use Auth;
 use Api\Core\BaseController;
 use Illuminate\Database\Eloquent\Builder;

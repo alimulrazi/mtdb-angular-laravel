@@ -1,6 +1,6 @@
 <?php namespace Api\Files\Actions;
 
-use App\User;
+use App\Models\User;
 use Auth;
 use Api\Billing\BillingPlan;
 use Api\Settings\Settings;

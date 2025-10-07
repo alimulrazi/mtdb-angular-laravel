@@ -1,7 +1,7 @@
 <?php namespace Api\Auth\Validators;
 
 use App;
-use App\User;
+use App\Models\User;
 use Api\Settings\Settings;
 
 class EmailVerifiedValidator {

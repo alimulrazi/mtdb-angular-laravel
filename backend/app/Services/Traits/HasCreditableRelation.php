@@ -2,7 +2,7 @@
 
 namespace App\Services\Traits;
 
-use App\Person;
+use App\Models\Person;
 use DB;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 

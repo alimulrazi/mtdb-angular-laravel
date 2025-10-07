@@ -1,6 +1,6 @@
 <?php
 
-use App\Title;
+use App\Models\Title;
 
 return [
     Title::class => [

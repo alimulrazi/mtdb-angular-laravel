@@ -2,7 +2,7 @@
 
 namespace Api\Validation\Validators;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Validation\Concerns\ValidatesAttributes;
 

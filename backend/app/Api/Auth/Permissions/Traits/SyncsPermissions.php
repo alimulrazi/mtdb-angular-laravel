@@ -2,7 +2,7 @@
 
 namespace Api\Auth\Permissions\Traits;
 
-use App\User;
+use App\Models\User;
 use Api\Auth\Roles\Role;
 use Api\Billing\BillingPlan;
 use Illuminate\Database\Eloquent\Model;

@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use App\Episode;
-use App\Title;
-use App\Video;
-use App\VideoCaption;
+use App\Models\Episode;
+use App\Models\Title;
+use App\Models\Video;
+use App\Models\VideoCaption;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Collection;

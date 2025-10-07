@@ -2,7 +2,7 @@
 
 namespace Api\Files\Actions;
 
-use App\User;
+use App\Models\User;
 use Auth;
 use Api\Files\Events\FileEntryCreated;
 use Api\Files\FileEntry;
@@ -39,7 +39,7 @@ class CreateFileEntry
         } else {
             $data = app(UploadedFileToArray::class)->execute($fileOrData);
         }
-        
+
         // merge extra data specified by user
         $userId = Arr::get($extra, 'userId', Auth::id());
         $data = array_merge($data, [

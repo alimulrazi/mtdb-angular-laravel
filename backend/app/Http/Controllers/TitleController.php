@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Episode;
-use App\Image;
+use App\Models\Episode;
+use App\Models\Image;
 use App\Jobs\IncrementModelViews;
-use App\Listable;
-use App\Review;
-use App\Season;
+use App\Models\Listable;
+use App\Models\Review;
+use App\Models\Season;
 use App\Services\Titles\Retrieve\PaginateTitles;
 use App\Services\Titles\Retrieve\ShowTitle;
 use App\Services\Titles\Store\StoreTitleData;
-use App\Title;
-use App\Video;
+use App\Models\Title;
+use App\Models\Video;
 use Api\Core\BaseController;
 use DB;
 use Illuminate\Http\JsonResponse;

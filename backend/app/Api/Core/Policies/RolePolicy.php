@@ -1,6 +1,6 @@
 <?php namespace Api\Core\Policies;
 
-use App\User;
+use App\Models\User;
 use Api\Auth\Roles\Role;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

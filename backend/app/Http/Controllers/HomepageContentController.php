@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ListModel;
+use App\Models\ListModel;
 use App\Services\Lists\LoadListContent;
 use Api\Core\BaseController;
 use Api\Settings\Settings;

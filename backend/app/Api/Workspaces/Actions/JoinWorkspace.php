@@ -2,7 +2,7 @@
 
 namespace Api\Workspaces\Actions;
 
-use App\User;
+use App\Models\User;
 use Api\Workspaces\Notifications\WorkspaceInvitation;
 use Api\Workspaces\WorkspaceInvite;
 use Session;

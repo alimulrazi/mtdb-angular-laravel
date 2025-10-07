@@ -2,7 +2,7 @@
 
 namespace Api\Comments;
 
-use App\User;
+use App\Models\User;
 use Arr;
 use Api\Auth\Roles\Role;
 use Api\Billing\BillingPlan;

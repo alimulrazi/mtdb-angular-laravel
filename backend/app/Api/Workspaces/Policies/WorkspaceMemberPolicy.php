@@ -2,7 +2,7 @@
 
 namespace Api\Workspaces\Policies;
 
-use App\User;
+use App\Models\User;
 use Api\Core\Policies\BasePolicy;
 use Api\Workspaces\Workspace;
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Titles\Retrieve\GetRelatedTitles;
-use App\Title;
+use App\Models\Title;
 use Api\Core\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

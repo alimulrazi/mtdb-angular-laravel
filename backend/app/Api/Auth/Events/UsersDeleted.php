@@ -2,7 +2,7 @@
 
 namespace Api\Auth\Events;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
 class UsersDeleted

@@ -2,8 +2,8 @@
 
 namespace App\Services\People\Retrieve;
 
-use App\Person;
-use App\Title;
+use App\Models\Person;
+use App\Models\Title;
 use Api\Settings\Settings;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Arr;

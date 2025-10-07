@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Title;
+use App\Models\Title;
 use Api\Core\BaseController;
 use Api\Tags\Tag;
 use Illuminate\Http\Request;

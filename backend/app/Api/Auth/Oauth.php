@@ -2,7 +2,7 @@
 
 namespace Api\Auth;
 
-use App\User;
+use App\Models\User;
 use Api\Core\Bootstrap\MobileBootstrapData;
 use Exception;
 use Api\Settings\Settings;

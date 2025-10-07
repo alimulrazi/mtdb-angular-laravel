@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\ListModel;
+use App\Models\ListModel;
 use App\Services\Lists\DeleteLists;
 use Api\Auth\Events\UserCreated;
 use Api\Auth\Events\UsersDeleted;

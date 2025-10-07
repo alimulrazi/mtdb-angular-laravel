@@ -2,7 +2,7 @@
 
 namespace App\Services\People\Store;
 
-use App\Person;
+use App\Models\Person;
 use App\Services\Titles\Store\StoreCredits;
 use App\Services\Traits\StoresMediaImages;
 

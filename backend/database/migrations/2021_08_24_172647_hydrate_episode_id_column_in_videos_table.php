@@ -1,7 +1,7 @@
 <?php
 
-use App\Episode;
-use App\Video;
+use App\Models\Episode;
+use App\Models\Video;
 use Illuminate\Database\Migrations\Migration;
 
 class HydrateEpisodeIdColumnInVideosTable extends Migration

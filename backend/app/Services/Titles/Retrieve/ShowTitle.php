@@ -2,9 +2,9 @@
 
 namespace App\Services\Titles\Retrieve;
 
-use App\Episode;
+use App\Models\Episode;
 use App\Services\Titles\Store\StoreTitleData;
-use App\Title;
+use App\Models\Title;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;

@@ -2,7 +2,7 @@
 
 namespace Api\Auth\Events;
 
-use App\User;
+use App\Models\User;
 
 class UserAvatarChanged
 {

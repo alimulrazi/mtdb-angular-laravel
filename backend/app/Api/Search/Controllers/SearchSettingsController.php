@@ -4,7 +4,7 @@ namespace Api\Search\Controllers;
 
 use Algolia\AlgoliaSearch\Config\SearchConfig;
 use Algolia\AlgoliaSearch\SearchClient as Algolia;
-use App\User;
+use App\Models\User;
 use Artisan;
 use Api\Billing\BillingPlan;
 use Api\Billing\Subscription;

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\ListModel;
-use App\User;
+use App\Models\ListModel;
+use App\Models\User;
 use Auth;
 use Api\Comments\Comment;
 use Api\Core\BaseController;

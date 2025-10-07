@@ -2,12 +2,12 @@
 
 namespace App\Services\Data\Tmdb;
 
-use App\Episode;
-use App\Person;
-use App\Season;
+use App\Models\Episode;
+use App\Models\Person;
+use App\Models\Season;
 use App\Services\Traits\HandlesTitleId;
-use App\Title;
-use App\Video;
+use App\Models\Title;
+use App\Models\Video;
 use Carbon\Carbon;
 use Api\Settings\Settings;
 use Illuminate\Support\Arr;

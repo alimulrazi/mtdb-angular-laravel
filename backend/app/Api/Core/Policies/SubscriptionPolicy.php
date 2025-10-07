@@ -2,7 +2,7 @@
 
 namespace Api\Core\Policies;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class SubscriptionPolicy

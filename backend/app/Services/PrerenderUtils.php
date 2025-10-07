@@ -1,10 +1,10 @@
 <?php namespace App\Services;
 
-use App\Episode;
-use App\NewsArticle;
-use App\Person;
-use App\Season;
-use App\Title;
+use App\Models\Episode;
+use App\Models\NewsArticle;
+use App\Models\Person;
+use App\Models\Season;
+use App\Models\Title;
 use Api\Core\Seo\BasePrerenderUtils;
 
 class PrerenderUtils extends BasePrerenderUtils

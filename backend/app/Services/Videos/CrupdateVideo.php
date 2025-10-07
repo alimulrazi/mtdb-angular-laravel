@@ -2,9 +2,9 @@
 
 namespace App\Services\Videos;
 
-use App\Episode;
-use App\Season;
-use App\Video;
+use App\Models\Episode;
+use App\Models\Season;
+use App\Models\Video;
 use Auth;
 use Api\Settings\Settings;
 use Illuminate\Support\Arr;

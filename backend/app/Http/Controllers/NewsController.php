@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\NewsArticle;
+use App\Models\NewsArticle;
 use App\Services\News\ImportNewsFromRemoteProvider;
 use Api\Core\BaseController;
 use Api\Database\Datasource\MysqlDataSource;

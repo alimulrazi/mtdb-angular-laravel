@@ -2,7 +2,7 @@
 
 namespace App\Services\Titles\Retrieve;
 
-use App\Title;
+use App\Models\Title;
 use Carbon\Carbon;
 use Api\Database\Datasource\MysqlDataSource;
 use Api\Settings\Settings;

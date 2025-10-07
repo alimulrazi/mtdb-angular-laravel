@@ -4,7 +4,7 @@ use Api\Auth\Permissions\Permission;
 use Api\Auth\Permissions\Traits\SyncsPermissions;
 use DB;
 use Carbon\Carbon;
-use App\User;
+use App\Models\User;
 use Api\Auth\Roles\Role;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Seeder;

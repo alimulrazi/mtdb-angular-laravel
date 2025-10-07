@@ -3,7 +3,7 @@
 use Api\Billing\BillingPlan;
 use Api\Billing\GatewayException;
 use Api\Billing\Subscription;
-use App\User;
+use App\Models\User;
 
 interface GatewaySubscriptionsInterface
 {

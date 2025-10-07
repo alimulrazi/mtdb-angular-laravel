@@ -3,10 +3,10 @@
 namespace App\Services\Titles\Store;
 
 use DB;
-use App\Title;
-use App\Person;
-use App\Season;
-use App\Episode;
+use App\Models\Title;
+use App\Models\Person;
+use App\Models\Season;
+use App\Models\Episode;
 use Arr;
 use Illuminate\Support\Collection;
 
